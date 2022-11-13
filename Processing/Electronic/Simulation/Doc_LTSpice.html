@@ -1,0 +1,3673 @@
+
+
+<!-- Début de l'importation du fichier CSS -->
+
+<style type='text/css'>
+/*
+@project Bibliothèque de classes CSS pour l'affichage des boutons
+@author Nicolas LE GUERROUE
+@language CSS
+@language_version 3.4
+@version 1.0
+@date 21 aout 2019
+@presentation Cette bibliothèque permet de définir la mise en forme des boutons.
+@disconnected
+*/
+
+/*
+@title Mise en forme des boutons
+@info Permet de mettre en forme les boutons [balises et type input des formulaire]
+@target Portée
+@example Essayer les boutons
+*/
+
+
+/* 
+@class button
+@info Permet de définir un bouton classique
+@target Balise button
+@example <button @add> button </button>
+*/
+.button {
+  display: inline-block;
+  cursor: pointer;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1.5rem;
+  line-height: 1.5; 
+  border-radius: 0.01rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.button:hover{
+  color: #212529;
+  text-decoration: none;
+ }
+
+/* 
+@class button button-primary
+@info Permet de définir un bouton primaire [bleu]
+@target Balise button
+@example <button @add> button </button>
+*/
+.button-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.button-primary:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+/* 
+@class button button-secondary
+@info Permet de définir un bouton secondaire [gris]
+@target Balise button
+@example <button @add> button </button>
+*/
+.button-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+.button-secondary:hover {
+  color: #fff;
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+/* 
+@class button button-danger
+@info Permet de définir un bouton 'danger' [rouge]
+@target Balise button
+@example <button @add> button </button>
+*/
+.button-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+.button-danger:hover {
+  color: #fff;
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+/* 
+@class button button-light
+@info Permet de définir un bouton clair [gris clair]
+@target Balise button
+@example <button @add> button </button>
+*/
+.button-light {
+  color: #212529;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+}
+.button-light:hover {
+  color: #212529;
+  background-color: #e2e6ea;
+  border-color: #dae0e5;
+}
+
+/* 
+@class button button-dark
+@info Permet de définir un bouton foncé [gris foncé]
+@target Balise button
+@example <button @add> button </button>
+*/
+.button-dark {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #343a40;
+}
+.button-dark:hover {
+  color: #fff;
+  background-color: #23272b;
+  border-color: #1d2124;
+}
+
+/* 
+@class button button-link
+@info Permet de définir un bouton de lien
+@target Balise button
+@example <button @add> button </button>
+*/
+.button-link {
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+.button-link:hover {
+  font-size: 1.5rem;
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* 
+@class button button-info
+@info Permet de définir un bouton d'info
+@target Balise button
+@example <button @add> button </button>
+*/
+.button-info {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+.button-info:hover {
+  color: #fff;
+  background-color: #138496;
+  border-color: #117a8b;
+}
+
+/* 
+@class button button-success
+@info Permet de définir un bouton de succès [vert]
+@target Balise button
+@example <button @add> button </button>
+*/
+.button-success {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+.button-success:hover {
+  color: #fff;
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+/* 
+@class button button-warning
+@info Permet de définir un bouton de prévention [orange]
+@target Balise button
+@example <button @add> button </button>
+*/
+.button-warning {
+  /*ont-size:0.8em;
+  padding: 0.2rem 0.6rem;*/
+  color: #212529;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.button-warning:hover {
+  /*font-size:0.8em;
+  padding: 0.2rem 0.6rem;*/
+  color: #212529;
+  background-color: #e0a800;
+  border-color: #d39e00;
+}
+</style>
+
+
+<!-- Fin de l'importation ddu fichier CSS -->
+
+
+
+<!-- Début de l'importation du fichier CSS -->
+
+<style type='text/css'>
+/*
+@project Bibliothèque de classes CSS pour la gestion des liens
+@author Nicolas LE GUERROUE
+@language CSS
+@language_version 3.4
+@version 1.0
+@date 21 aout 2019
+@presentation Cette bibliothèque permet de définir la mise en forme des liens
+@disconnected
+*/
+/* couleur d'arrière plan d'un lien non visité */
+.link-bg-aqua:link  {background-color: aqua;}
+.link-bg-black:link  {background-color: black;}
+.link-bg-blue:link  {background-color: blue;}
+.link-bg-fuchsia:link  {background-color: fuchsia;}
+.link-bg-grey:link  {background-color: grey;}
+.link-bg-green:link  {background-color: green;}
+.link-bg-lime:link  {background-color: lime;}
+.link-bg-maroon:link  {background-color: maroon;}
+.link-bg-navy:link  {background-color: navy;}
+.link-bg-olive:link  {background-color: olive;}
+.link-bg-purple:link  {background-color: purple;}
+.link-bg-red:link  {background-color: red;}
+.link-bg-silver:link  {background-color: silver;}
+.link-bg-teal:link  {background-color: teal;}
+.link-bg-white:link  {background-color: white;}
+.link-bg-yellow:link  {background-color: yellow;}
+.link-bg-orange:link  {background-color: orange;}
+.underline {text-decoration:underline;}
+/* couleur de texte d'un lien non visté */
+.link-aqua:link  {color: aqua;}
+.link-black:link  {color: black;}
+.link-blue:link  {color: blue;}
+.link-fuchsia:link  {color: fuchsia;}
+.link-grey:link  {color: grey;}
+.link-green:link  {color: green;}
+.link-lime:link  {color: lime;}
+.link-maroon:link  {color: maroon;}
+.link-navy:link  {color: navy;}
+.link-olive:link  {color: olive;}
+.link-purple:link  {color: purple;}
+.link-red:link  {color: red;}
+.link-silver:link  {color: silver;}
+.link-teal:link  {color: teal;}
+.link-white:link  {color: white;}
+.link-yellow:link  {color: yellow;}
+.link-orange:link  {color: orange;}
+
+/* couleur de texte d'un lien non visté pour une animation de couleur future*/
+.link-aqua-animation:link  {	color: aqua;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-black-animation:link  	{color: black;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-blue-animation:link  {	color: blue;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-fuchsia-animation:link	  {color: fuchsia;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-grey-animation:link  {	color: grey;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-green-animation:link  	{color: green;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-lime-animation:link  {	color: lime;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-maroon-animation:link 	 {color: maroon;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-navy-animation:link  {	color: navy;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-olive-animation:link  	{color: olive;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-purple-animation:link 	 {color: purple;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-red-animation:link  {color: red;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-silver-animation:link 	 {color: silver;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-teal-animation:link  {	color: teal;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-white-animation:link  	{color: white;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-yellow-animation:link 	 {color: yellow;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-orange-animation:link 	 {color: orange;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+
+/* couleur d'arrière plan d'un lien que l'utilisateur à déja visité */
+.link-visited-bg-aqua:visited  {background-color: aqua;}
+.link-visited-bg-black:visited  {background-color: black;}
+.link-visited-bg-blue:visited  {background-color: blue;}
+.link-visited-bg-fuchsia:visited  {background-color: fuchsia;}
+.link-visited-bg-grey:visited  {background-color: grey;}
+.link-visited-bg-green:visited  {background-color: green;}
+.link-visited-bg-lime:visited  {background-color: lime;}
+.link-visited-bg-maroon:visited  {background-color: maroon;}
+.link-visited-bg-navy:visited  {background-color: navy;}
+.link-visited-bg-olive:visited  {background-color: olive;}
+.link-visited-bg-purple:visited  {background-color: purple;}
+.link-visited-bg-red:visited  {background-color: red;}
+.link-visited-bg-silver:visited  {background-color: silver;}
+.link-visited-bg-teal:visited  {background-color: teal;}
+.link-visited-bg-white:visited  {background-color: white;}
+.link-visited-bg-yellow:visited  {background-color: yellow;}
+.link-visited-bg-orange:visited  {background-color: orange;}
+
+/* couleur de texte d'un lien que l'utilisateur à déja visité */
+.link-visited-aqua:visited  {color: aqua;}
+.link-visited-black:visited  {color: black;}
+.link-visited-blue:visited  {color: blue;}
+.link-visited-fuchsia:visited  {color: fuchsia;}
+.link-visited-grey:visited  {color: grey;}
+.link-visited-green:visited  {color: green;}
+.link-visited-lime:visited  {color: lime;}
+.link-visited-maroon:visited  {color: maroon;}
+.link-visited-navy:visited  {color: navy;}
+.link-visited-olive:visited  {color: olive;}
+.link-visited-purple:visited  {color: purple;}
+.link-visited-red:visited  {color: red;}
+.link-visited-silver:visited  {color: silver;}
+.link-visited-teal:visited  {color: teal;}
+.link-visited-white:visited  {color: white;}
+.link-visited-yellow:visited  {color: yellow;}
+.link-visited-orange:visited  {color: orange;}
+
+/* couleur d'arrière plan d'un lien que l'utilisateur clique */
+.link-active-bg-aqua:active  {background-color: aqua;}
+.link-active-bg-black:active  {background-color: black;}
+.link-active-bg-blue:active  {background-color: blue;}
+.link-active-bg-fuchsia:active  {background-color: fuchsia;}
+.link-active-bg-grey:active  {background-color: grey;}
+.link-active-bg-green:active  {background-color: green;}
+.link-active-bg-lime:active  {background-color: lime;}
+.link-active-bg-maroon:active  {background-color: maroon;}
+.link-active-bg-navy:active  {background-color: navy;}
+.link-active-bg-olive:active  {background-color: olive;}
+.link-active-bg-purple:active  {background-color: purple;}
+.link-active-bg-red:active  {background-color: red;}
+.link-active-bg-silver:active  {background-color: silver;}
+.link-active-bg-teal:active  {background-color: teal;}
+.link-active-bg-white:active  {background-color: white;}
+.link-active-bg-yellow:active  {background-color: yellow;}
+.link-active-bg-orange:active  {background-color: orange;}
+
+/* couleur d'arrière plan d'un lien que l'utilisateur survol */
+.link-hover-bg-aqua:hover  {background-color: aqua;}
+.link-hover-bg-black:hover  {background-color: black;}
+.link-hover-bg-blue:hover  {background-color: blue;}
+.link-hover-bg-fuchsia:hover  {background-color: fuchsia;}
+.link-hover-bg-grey:hover  {background-color: grey;}
+.link-hover-bg-green:hover  {background-color: green;}
+.link-hover-bg-lime:hover  {background-color: lime;}
+.link-hover-bg-maroon:hover  {background-color: maroon;}
+.link-hover-bg-navy:hover  {background-color: navy;}
+.link-hover-bg-olive:hover  {background-color: olive;}
+.link-hover-bg-purple:hover  {background-color: purple;}
+.link-hover-bg-red:hover  {background-color: red;}
+.link-hover-bg-silver:hover  {background-color: silver;}
+.link-hover-bg-teal:hover  {background-color: teal;}
+.link-hover-bg-white:hover  {background-color: white; text-decoration: none;}
+.link-hover-bg-yellow:hover  {background-color: yellow;}
+.link-hover-bg-orange:hover  {background-color: orange;}
+
+/* couleur de texte d'un lien que l'utilisateur survol */
+.link-hover-aqua:hover  {color: aqua;}
+.link-hover-black:hover  {color: black;}
+.link-hover-blue:hover  {color: blue;}
+.link-hover-fuchsia:hover  {color: fuchsia;}
+.link-hover-grey:hover  {color: grey;}
+.link-hover-green:hover  {color: green;}
+.link-hover-lime:hover  {color: lime;}
+.link-hover-maroon:hover  {color: maroon;}
+.link-hover-navy:hover  {color: navy;}
+.link-hover-olive:hover  {color: olive;}
+.link-hover-purple:hover  {color: purple;}
+.link-hover-red:hover  {color: red;}
+.link-hover-silver:hover  {color: silver;}
+.link-hover-teal:hover  {color: teal;}
+.link-hover-white:hover  {color: white;}
+.link-hover-yellow:hover  {color: yellow;}
+.link-hover-orange:hover  {color: orange;}
+
+/* couleur de texte d'un lien que l'utilisateur clique */
+.link-active-aqua:active  {color: aqua;}
+.link-active-black:active  {color: black;}
+.link-active-blue:active  {color: blue;}
+.link-active-fuchsia:active  {color: fuchsia;}
+.link-active-grey:active  {color: grey;}
+.link-active-green:active  {color: green;}
+.link-active-lime:active  {color: lime;}
+.link-active-maroon:active  {color: maroon;}
+.link-active-navy:active  {color: navy;}
+.link-active-olive:active  {color: olive;}
+.link-active-purple:active  {color: purple;}
+.link-active-red:active  {color: red;}
+.link-active-silver:active  {color: silver;}
+.link-active-teal:active  {color: teal;}
+.link-active-white:active  {color: white;}
+.link-active-yellow:active  {color: yellow;}
+.link-active-orange:active  {color: orange;}
+
+
+
+/* effet sur le lien au repos */
+.link-underline:link {text-decoration: underline;}
+
+/* effet sur le lien une vois visité */
+.link-visited-underline:visited {text-decoration: underline;}
+
+/* effet sur le lien au survol */
+.link-hover-underline:hover {text-decoration: underline;}
+
+/* effet sur le lien au moment du click */
+.link-active-underline:active {text-decoration: underline;}
+</style>
+
+
+<!-- Fin de l'importation ddu fichier CSS -->
+
+
+
+<!-- Début de l'importation du fichier CSS -->
+
+<style type='text/css'>
+/*
+@project Bibliothèque de classes CSS pour la mise en couleur d'élements
+@author Nicolas LE GUERROUE
+@language CSS
+@language_version 3.4
+@version 1.0
+@date 21 aout 2019
+@presentation Cette bibliothèque permet de définir les couleurs des élements HTML.
+@presentation Les couleurs concernent celles du texte et des arrières-plan
+@presentation Il est également possible de changer l'opacité des élements.
+@connected
+*/
+
+
+
+/*
+@title Couleurs des polices
+@info Permet de modifier la couleur des polices
+@target Portée
+@example Visualisez l'exemple
+*/
+/* 
+@class aqua
+@info Permet de définir la couleur de police en bleu clair
+@target Toutes les balises 
+@example exemple
+*/
+.aqua {color: aqua;}
+/* 
+@class black
+@info Permet de définir la couleur de police en noir
+@target Toutes les balises 
+@example exemple
+*/
+.black {color: black;}
+/* 
+@class blue
+@info Permet de définir la couleur de police en bleu
+@target Toutes les balises 
+@example exemple
+*/
+.blue {color: blue;}
+/* 
+@class sky-blue
+@info Permet de définir la couleur de police en bleu ciel
+@target Toutes les balises 
+@example exemple
+*/
+.sky-blue {color: #25A9FF; }
+/* 
+@class fuchsia
+@info Permet de définir la couleur de police en fushia
+@target Toutes les balises 
+@example exemple
+*/
+
+.fuchsia {color: fuchsia;}
+/* 
+@class grey
+@info Permet de définir la couleur de police en gris
+@target Toutes les balises 
+@example exemple
+*/
+.grey {color: grey;}
+/* 
+@class green
+@info Permet de définir la couleur de police en vert
+@target Toutes les balises 
+@example exemple
+*/
+.green {color: green;}
+/* 
+@class lime
+@info Permet de définir la couleur de police en couleur citron
+@target Toutes les balises 
+@example exemple
+*/
+.lime {color: lime;}
+/* 
+@class maroon
+@info Permet de définir la couleur de police en marron
+@target Toutes les balises 
+@example exemple
+*/
+.maroon {color: maroon;}
+/* 
+@class metallic-blue
+@info Permet de définir la couleur de police en bleu métallique
+@target Toutes les balises 
+@example exemple
+*/
+.metallic-blue {color: #2F4A6D;}
+/* 
+@class navy
+@info Permet de définir la couleur de police en bleu océan
+@target Toutes les balises 
+@example exemple
+*/
+.navy {color: navy;}
+/* 
+@class night
+@info Permet de définir la couleur de police en couleur nuit
+@target Toutes les balises 
+@example exemple
+*/
+.night {color:#0F1022;}
+/* 
+@class olive
+@info Permet de définir la couleur de police en couleur olive
+@target Toutes les balises 
+@example exemple
+*/
+.olive {color: olive;}
+/* 
+@class orange
+@info Permet de définir la couleur de police en orange
+@target Toutes les balises 
+@example exemple
+*/
+.orange {color: orange;}
+/* 
+@class purple
+@info Permet de définir la couleur de police en violet
+@target Toutes les balises 
+@example exemple
+*/
+.purple {color: purple;}
+/* 
+@class red
+@info Permet de définir la couleur de police en rouge
+@target Toutes les balises 
+@example exemple
+*/
+.red {color: red;}
+/* 
+@class silver
+@info Permet de définir la couleur de police en argenté
+@target Toutes les balises 
+@example exemple
+*/
+.silver {color: silver;}
+/* 
+@class teal
+@info Permet de définir la couleur de police en blue canard
+@target Toutes les balises 
+@example exemple
+*/
+.teal {color: teal;}
+/* 
+@class white
+@info Permet de définir la couleur de police en blanc
+@target Toutes les balises 
+@example exemple
+*/
+.white {color: white;}
+/* 
+@class yellow
+@info Permet de définir la couleur de police en jaune
+@target Toutes les balises 
+@example exemple
+*/
+.yellow {color: yellow;}
+/*
+@class pink 
+@info Permet de définir la couleur de police en rose
+@target Toutes les balises 
+@example exemple 
+*/ 
+.pink {color: #ff9090;}
+/*
+@class magenta 
+@info Permet de définir la couleur de police en magenta
+@target Toutes les balises 
+@example exemple 
+*/ 
+.magenta {color: #ff00d7;}
+/*
+@class water 
+@info Permet de définir la couleur de police en bleu eau
+@target Toutes les balises 
+@example exemple 
+*/ 
+.water {color: #0089c8;}
+/*@end_section*/
+
+/*
+@title Couleurs des polices avec animation. 
+@info Au survol, la couleur peut changer avec un délai de 0.3s
+@target Portée
+@example Survolez l'exemple
+*/
+/* 
+@class aqua-animation
+@info Permet de définir la couleur d'animation de police en bleu clair au survol
+@target Toutes les balises 
+@example exemple
+*/
+.aqua-animation {color: aqua;
+			transition-property:color;
+			transition-duration:0.3s;}
+/* 
+@class black-animation
+@info Permet de définir la couleur d'animation de police en noir au survol
+@target Toutes les balises 
+@example exemple
+*/
+.black-animation {color: black;
+			transition-property:color;
+			transition-duration:0.3s;}
+/* 
+@class blue-animation
+@info Permet de définir la couleur de police en bleu
+@target Toutes les balises 
+@example exemple
+*/
+.blue-animation {color: blue;
+			transition-property:color;
+			transition-duration:0.3s;}
+/* 
+@class sky-blue-animation
+@info Permet de définir la couleur de police en bleu ciel
+@target Toutes les balises 
+@example exemple
+*/
+.sky-blue-animation {color: #25A9FF; }
+/* 
+@class fuchsia
+@info Permet de définir la couleur de police en fushia
+@target Toutes les balises 
+@example exemple
+*/
+
+.fuchsia-animation {color: fuchsia;
+			transition-property:color;
+			transition-duration:0.3s;}
+/* 
+@class grey-animation
+@info Permet de définir la couleur de police en gris
+@target Toutes les balises 
+@example exemple
+*/
+.grey-animation {color: grey;
+			transition-property:color;
+			transition-duration:0.3s;}
+/* 
+@class green-animation
+@info Permet de définir la couleur de police en vert
+@target Toutes les balises 
+@example exemple
+*/
+.green-animation {color: green;
+			transition-property:color;
+			transition-duration:0.3s;}
+/* 
+@class lime-animation
+@info Permet de définir la couleur de police en couleur citron
+@target Toutes les balises 
+@example exemple
+*/
+.lime-animation {color: lime;
+			transition-property:color;
+			transition-duration:0.3s;}
+/* 
+@class maroon-animation
+@info Permet de définir la couleur de police en marron
+@target Toutes les balises 
+@example exemple
+*/
+.maroon-animation {color: maroon;
+			transition-property:color;
+			transition-duration:0.3s;}
+/* 
+@class metallic-blue-animation
+@info Permet de définir la couleur de police en bleu métallique
+@target Toutes les balises 
+@example exemple
+*/
+.metallic-blue-animation {color: #2F4A6D;
+			transition-property:color;
+			transition-duration:0.3s;}
+/* 
+@class navy-animation
+@info Permet de définir la couleur de police en bleu océan
+@target Toutes les balises 
+@example exemple
+*/
+.navy-animation {color: navy;
+			transition-property:color;
+			transition-duration:0.3s;}
+/* 
+@class night-animation
+@info Permet de définir la couleur de police en couleur nuit
+@target Toutes les balises 
+@example exemple
+*/
+.night-animation {color:#0F1022;
+			transition-property:color;
+			transition-duration:0.3s;}
+/* 
+@class olive-animation
+@info Permet de définir la couleur de police en couleur olive
+@target Toutes les balises 
+@example exemple
+*/
+.olive-animation {color: olive;
+			transition-property:color;
+			transition-duration:0.3s;}
+/* 
+@class orange-animation
+@info Permet de définir la couleur de police en orange
+@target Toutes les balises 
+@example exemple
+*/
+.orange-animation {color: orange;
+			transition-property:color;
+			transition-duration:0.3s;}
+/* 
+@class purple-animation
+@info Permet de définir la couleur de police en violet
+@target Toutes les balises 
+@example exemple
+*/
+.purple-animation {color: purple;
+			transition-property:color;
+			transition-duration:0.3s;}
+/* 
+@class red-animation
+@info Permet de définir la couleur de police en rouge
+@target Toutes les balises 
+@example exemple
+*/
+.red-animation {color: red;
+			transition-property:color;
+			transition-duration:0.3s;}
+/* 
+@class silver-animation
+@info Permet de définir la couleur de police en argenté
+@target Toutes les balises 
+@example exemple
+*/
+.silver-animation {color: silver;
+			transition-property:color;
+			transition-duration:0.3s;}
+/* 
+@class teal-animation
+@info Permet de définir la couleur de police en blue canard
+@target Toutes les balises 
+@example exemple
+*/
+.teal-animation {color: teal;
+			transition-property:color;
+			transition-duration:0.3s;}
+/* 
+@class white-animation
+@info Permet de définir la couleur de police en blanc
+@target Toutes les balises 
+@example exemple
+*/
+.white-animation {color: white;
+			transition-property:color;
+			transition-duration:0.3s;}
+/* 
+@class yellow-animation
+@info Permet de définir la couleur de police en jaune
+@target Toutes les balises 
+@example exemple
+*/
+.yellow-animation {color: yellow;
+			transition-property:color;
+			transition-duration:0.3s;}
+/*
+@class pink-animation
+@info Permet de définir la couleur de police en rose
+@target Toutes les balises 
+@example exemple 
+*/ 
+.pink-animation {color: #ff9090;
+			transition-property:color;
+			transition-duration:0.3s;}
+/*
+@class magenta-animation
+@info Permet de définir la couleur de police en magenta
+@target Toutes les balises 
+@example exemple 
+*/ 
+.magenta-animation {color: #ff00d7;
+			transition-property:color;
+			transition-duration:0.3s;}
+/*
+@class water-animation
+@info Permet de définir la couleur de police en eau
+@target Toutes les balises 
+@example exemple 
+*/ 
+.water-animation {color: #0089c8;
+			transition-property:color;
+			transition-duration:0.3s;}
+/*@end_section*/
+
+
+/*
+@info Permet de modifier la couleur des élements en arrière plan
+@target Portée
+@example Visualisez l'exemple
+*/
+/* 
+@class bg-aqua
+@info Permet de définir la couleur d'arrière plan en bleu clair
+@target Toutes les balises 
+@example exemple
+*/
+.bg-aqua {background-color: aqua;}
+/* 
+@class bg-black
+@info Permet de définir la couleur d'arrière plan en noir
+@target Toutes les balises 
+@example exemple
+*/
+.bg-black {background-color: black;}
+/* 
+@class bg-blue
+@info Permet de définir la couleur d'arrière plan en bleu
+@target Toutes les balises 
+@example exemple
+*/
+.bg-blue {background-color: blue;}
+/* 
+@class bg-sky-blue
+@info Permet de définir la couleur de police en bleu ciel
+@target Toutes les balises 
+@example exemple
+*/
+.bg-sky-blue {background-color: #25A9FF; }
+/* 
+@class bg-fuchsia
+@info Permet de définir la couleur d'arrière plan en bleu ciel
+@target Toutes les balises 
+@example exemple
+*/
+.bg-fuchsia {background-color: fuchsia;}
+/* 
+@class bg-grey
+@info Permet de définir la couleur d'arrière plan en gris
+@target Toutes les balises 
+@example exemple
+*/
+.bg-grey {background-color: grey;}
+/* 
+@class bg-green
+@info Permet de définir la couleur d'arrière plan en vert
+@target Toutes les balises 
+@example exemple
+*/
+.bg-green {background-color: green;}
+/* 
+@class bg-lime
+@info Permet de définir la couleur d'arrière plan en couleur citron
+@target Toutes les balises 
+@example exemple
+*/
+.bg-lime {background-color: lime;}
+/* 
+@class bg-maroon
+@info Permet de définir la couleur d'arrière plan en marron
+@target Toutes les balises 
+@example exemple
+*/
+.bg-maroon {background-color: maroon;}
+/* 
+@class bg-metallic-blue
+@info Permet de définir la couleur d'arrière plan en bleu métallique
+@target Toutes les balises 
+@example exemple
+*/
+.bg-metallic-blue {background-color: #2F4A6D;}
+/* 
+@class bg-navy
+@info Permet de définir la couleur d'arrière plan en bleu océan
+@target Toutes les balises 
+@example exemple
+*/
+.bg-navy {background-color: navy;}
+/* 
+@class bg-night
+@info Permet de définir la couleur d'arrière plan en couleur nuit
+@target Toutes les balises 
+@example exemple
+*/
+.bg-night {background-color:#0F1022;}
+/* 
+@class bg-olive
+@info Permet de définir la couleur d'arrière plan en couleur olive
+@target Toutes les balises 
+@example exemple
+*/
+.bg-olive {background-color: olive;}
+/* 
+@class bg-orange
+@info Permet de définir la couleur d'arrière plan en orange
+@target Toutes les balises 
+@example exemple
+*/
+.bg-orange {background-color: orange;}
+/* 
+@class bg-purple
+@info Permet de définir la couleur d'arrière plan en violet
+@target Toutes les balises 
+@example exemple
+*/
+.bg-purple {background-color: purple;}
+/* 
+@class bg-red
+@info Permet de définir la couleur d'arrière plan en rouge
+@target Toutes les balises 
+@example exemple
+*/
+.bg-red {background-color: red;}
+/* 
+@class bg-silver
+@info Permet de définir la couleur d'arrière plan en argenté
+@target Toutes les balises 
+@example exemple
+*/
+.bg-silver {background-color: silver;}
+/* 
+@class bg-teal
+@info Permet de définir la couleur d'arrière plan en blue canard
+@target Toutes les balises 
+@example exemple
+*/
+.bg-teal {background-color: teal;}
+/* 
+@class bg-white
+@info Permet de définir la couleur d'arrière plan en blanc
+@target Toutes les balises 
+@example exemple
+*/
+.bg-white {background-color: white;}
+/* 
+@class bg-yellow
+@info Permet de définir la couleur d'arrière plan en jaune
+@target Toutes les balises 
+@example exemple
+*/
+.bg-yellow {background-color: yellow;}
+/* 
+@class bg-pink 
+@info Permet de définir la couleur d'arrière-plan' en rose
+@target Toutes les balises 
+@example exemple 
+*/ 
+.bg-pink {background-color: #ff9090;}
+/* 
+@class bg-magenta 
+@info Permet de définir la couleur d'arrière-plan' en magenta
+@target Toutes les balises 
+@example exemple 
+*/ 
+.bg-magenta {background-color: #ff00d7;}
+/* 
+@class bg-water 
+@info Permet de définir la couleur d'arrière-plan' en eau
+@target Toutes les balises 
+@example exemple 
+*/ 
+.bg-water {background-color: #0089c8;}
+/*@end_section*/
+
+/*
+@title Couleurs des polices au survol
+@info Permet de modifier la couleur des polices au survol avec la souris
+@target Portée
+@example Survolez l'exemple
+*/
+/* 
+@class hover-aqua
+@info Permet de définir la couleur de police en bleu clair
+@target Toutes les balises 
+@example exemple
+*/
+.hover-aqua:hover {color: aqua;}
+/* 
+@class hover-black
+@info Permet de définir la couleur de police en noir
+@target Toutes les balises 
+@example exemple
+*/
+.hover-black:hover {color: black;}
+/* 
+@class hover-blue
+@info Permet de définir la couleur de police en bleu
+@target Toutes les balises 
+@example exemple
+*/
+.hover-blue:hover {color: blue;}
+/* 
+@class hover-sky-blue
+@info Permet de définir la couleur de police en bleu ciel
+@target Toutes les balises 
+@example exemple
+*/
+.hover-sky-blue:hover {color: #25A9FF; }
+/* 
+@class hover-fuchsia
+@info Permet de définir la couleur de police en fushia
+@target Toutes les balises 
+@example exemple
+*/
+.hover-fuchsia:hover {color: fuchsia;}
+/* 
+@class hover-grey
+@info Permet de définir la couleur de police en gris
+@target Toutes les balises 
+@example exemple
+*/
+.hover-grey:hover {color: grey;}
+/* 
+@class hover-green
+@info Permet de définir la couleur de police en vert
+@target Toutes les balises 
+@example exemple
+*/
+.hover-green:hover {color: green;}
+/* 
+@class hover-lime
+@info Permet de définir la couleur de police en couleur citron
+@target Toutes les balises 
+@example exemple
+*/
+.hover-lime:hover {color: lime;}
+/* 
+@class hover-maroon
+@info Permet de définir la couleur de police en marron
+@target Toutes les balises 
+@example exemple
+*/
+.hover-maroon:hover {color: maroon;}
+/* 
+@class hover-metallic-blue
+@info Permet de définir la couleur de police en bleu métallique
+@target Toutes les balises 
+@example exemple
+*/
+.hover-metallic-blue:hover {color: #2F4A6D;}
+/* 
+@class hover-navy
+@info Permet de définir la couleur de police en bleu océan
+@target Toutes les balises 
+@example exemple
+*/
+.hover-navy:hover {color: navy;}
+/* 
+@class hover-night
+@info Permet de définir la couleur de police en couleur nuit
+@target Toutes les balises 
+@example exemple
+*/
+.hover-night:hover {color:#0F1022;}
+/* 
+@class hover-olive
+@info Permet de définir la couleur de police en couleur olive
+@target Toutes les balises 
+@example exemple
+*/
+.hover-olive:hover {color: olive;}
+/* 
+@class hover-orange
+@info Permet de définir la couleur de police en orange
+@target Toutes les balises 
+@example exemple
+*/
+.hover-orange:hover {color: orange;}
+/* 
+@class hover-purple
+@info Permet de définir la couleur de police en violet
+@target Toutes les balises 
+@example exemple
+*/
+.hover-purple:hover {color: purple;}
+/* 
+@class hover-red
+@info Permet de définir la couleur de police en rouge
+@target Toutes les balises 
+@example exemple
+*/
+.hover-red:hover {color: red;}
+/* 
+@class hover-silver
+@info Permet de définir la couleur de police en argenté
+@target Toutes les balises 
+@example exemple
+*/
+.hover-silver:hover {color: silver;}
+/* 
+@class hover-teal
+@info Permet de définir la couleur de police en blue canard
+@target Toutes les balises 
+@example exemple
+*/
+.hover-teal:hover {color: teal;}
+/* 
+@class hover-white
+@info Permet de définir la couleur de police en blanc
+@target Toutes les balises 
+@example exemple
+*/
+.hover-white:hover {color: white;}
+/* 
+@class hover-yellow
+@info Permet de définir la couleur de police en jaune
+@target Toutes les balises 
+@example exemple
+*/
+.hover-yellow:hover {color: yellow;}
+/* 
+@class hover-pink 
+@info Permet de définir la couleur de police au survol en rose
+@target Toutes les balises 
+@example exemple 
+*/ 
+.hover-pink:hover {color: #ff9090;}
+/* 
+@class hover-magenta 
+@info Permet de définir la couleur de police au survol en magenta
+@target Toutes les balises 
+@example exemple 
+*/ 
+.hover-magenta:hover {color: #ff00d7;}
+/* 
+@class hover-water 
+@info Permet de définir la couleur de police au survol en eau
+@target Toutes les balises 
+@example exemple 
+*/ 
+.hover-water:hover {color: #0089c8;}
+/*@end_section*/
+
+/*
+@title Couleurs des fonds d'écran au survol
+@target Portée
+@example Survolez l'exemple
+*/
+/* 
+@class hover-bg-aqua
+@info Permet de définir la couleur de l'arrière-plan en bleu clair
+@target Toutes les balises 
+@example exemple
+*/
+.hover-bg-aqua:hover {background-color: aqua;}
+/* 
+@class hover-bg-black
+@info Permet de définir la couleur de l'arrière-plan en noir
+@target Toutes les balises 
+@example exemple
+*/
+.hover-bg-black:hover {background-color: black;}
+/* 
+@class hover-bg-blue
+@info Permet de définir la couleur de l'arrière-plan en bleu
+@target Toutes les balises 
+@example exemple
+*/
+.hover-bg-blue:hover {background-color: blue;}
+/* 
+@class hover-bg-sky-blue
+@info Permet de définir la couleur de l'arrière-plan en bleu ciel
+@target Toutes les balises 
+@example exemple
+*/
+.hover-sky-blue:hover {background-color: #25A9FF; }
+/* 
+@class hover-bg-fuchsia
+@info Permet de définir la couleur de l'arrière-plan en fushia
+@target Toutes les balises 
+@example exemple
+*/
+.hover-bg-fuchsia:hover {background-color: fuchsia;}
+/* 
+@class hover-bg-grey
+@info Permet de définir la couleur de l'arrière-plan en gris
+@target Toutes les balises 
+@example exemple
+*/
+.hover-bg-grey:hover {background-color: grey;}
+/* 
+@class hover-bg-green
+@info Permet de définir la couleur de l'arrière-plan en vert
+@target Toutes les balises 
+@example exemple
+*/
+.hover-bg-green:hover {background-color: green;}
+/* 
+@class hover-bg-lime
+@info Permet de définir la couleur de l'arrière-plan en couleur citron
+@target Toutes les balises 
+@example exemple
+*/
+
+.hover-bg-lime:hover {background-color: lime;}
+/* 
+@class hover-bg-maroon
+@info Permet de définir la couleur de l'arrière-plan en marron
+@target Toutes les balises 
+@example exemple
+*/
+
+.hover-bg-maroon:hover {background-color: maroon;}
+/* 
+@class hover-bg-metallic-blue
+@info Permet de définir la couleur de l'arrière-plan en bleu métallique
+@target Toutes les balises 
+@example exemple
+*/
+.hover-bg-metallic-blue:hover {background-color: #2F4A6D;}
+/* 
+@class hover-bg-navy
+@info Permet de définir la couleur de l'arrière-plan en bleu océan
+@target Toutes les balises 
+@example exemple
+*/
+.hover-bg-navy:hover {background-color: navy;}
+/* 
+@class hover-bg-night
+@info Permet de définir la couleur de l'arrière-plan en couleur nuit
+@target Toutes les balises 
+@example exemple
+*/
+.hover-bg-night:hover {background-color:#0F1022;}
+/* 
+@class hover-bg-olive
+@info Permet de définir la couleur de l'arrière-plan en couleur olive
+@target Toutes les balises 
+@example exemple
+*/
+.hover-bg-olive:hover {background-color: olive;}
+/* 
+@class hover-bg-orange
+@info Permet de définir la couleur de l'arrière-plan en orange
+@target Toutes les balises 
+@example exemple
+*/
+.hover-bg-orange:hover {background-color: orange;}
+/* 
+@class hover-bg-purple
+@info Permet de définir la couleur de l'arrière-plan en violet
+@target Toutes les balises 
+@example exemple
+*/
+.hover-bg-purple:hover {background-color: purple;}
+/* 
+@class hover-bg-red
+@info Permet de définir la couleur de l'arrière-plan en rouge
+@target Toutes les balises 
+@example exemple
+*/
+.hover-bg-red:hover {background-color: red;}
+/* 
+@class hover-bg-silver
+@info Permet de définir la couleur de l'arrière-plan en argenté
+@target Toutes les balises 
+@example exemple
+*/
+.hover-bg-silver:hover {background-color: silver;}
+/* 
+@class hover-bg-teal
+@info Permet de définir la couleur de l'arrière-plan en blue canard
+@target Toutes les balises 
+@example exemple
+*/
+.hover-bg-teal:hover {background-color: teal;}
+/* 
+@class hover-bg-white
+@info Permet de définir la couleur de l'arrière-plan en blanc
+@target Toutes les balises 
+@example exemple
+*/
+.hover-bg-white:hover {background-color: white;}
+/* 
+@class hover-bg-yellow
+@info Permet de définir la couleur de l'arrière-plan en jaune
+@target Toutes les balises 
+@example exemple
+*/
+.hover-bg-yellow:hover {background-color: yellow;}
+/* 
+@class hover-bg-pink 
+@info Permet de définir la couleur d'arrière-plan au survol en rose
+@target Toutes les balises 
+@example exemple 
+*/ 
+.hover-bg-pink:hover {background-color: #ff9090;}
+/* 
+@class hover-bg-magenta 
+@info Permet de définir la couleur d'arrière-plan au survol en magenta
+@target Toutes les balises 
+@example exemple 
+*/ 
+.hover-bg-magenta:hover {background-color: #ff00d7;}
+/* 
+@class hover-bg-water 
+@info Permet de définir la couleur d'arrière-plan au survol en eau
+@target Toutes les balises 
+@example exemple 
+*/ 
+.hover-bg-water:hover {background-color: #0089c8;}
+/*@end_section*/
+
+/*
+@title Couleurs des polices lors d'un appui
+@info Définit les couleurs de polices lors d'un click sur l'élement
+@target Portée
+@example Cliquez sur l'exemple
+*/
+/* 
+@class pdf-aqua
+@info Permet de définir la couleur de police en bleu clair lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.pdf-aqua[href*=".pdf"]{color: aqua;}
+/* 
+@class pdf-black
+@info Permet de définir la couleur de police en noir lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.pdf-black[href*=".pdf"]{color: black;}
+/* 
+@class pdf-blue
+@info Permet de définir la couleur de police en bleu lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.pdf-blue[href*=".pdf"]{color: blue;}
+/* 
+@class pdf-fuchsia
+@info Permet de définir la couleur de police en fushia lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.pdf-fuchsia[href*=".pdf"]{color: fuchsia;}
+/* 
+@class pdf-grey
+@info Permet de définir la couleur de police en gris lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.pdf-grey[href*=".pdf"]{color: grey;}
+/* 
+@class pdf-green
+@info Permet de définir la couleur de police en vert lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.pdf-green[href*=".pdf"]{color: green;}
+/* 
+@class pdf-lime
+@info Permet de définir la couleur de police en couleur citron lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.pdf-lime[href*=".pdf"]{color: lime;}
+/* 
+@class pdf-maroon
+@info Permet de définir la couleur de police en marron lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.pdf-maroon[href*=".pdf"]{color: maroon;}
+/* 
+@class pdf-metallic-blue
+@info Permet de définir la couleur de police en bleu métallique lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.pdf-metallic-blue[href*=".pdf"]{color: #2F4A6D;}
+/* 
+@class pdf-navy
+@info Permet de définir la couleur de police en bleu océan lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.pdf-navy[href*=".pdf"]{color: navy;}
+/* 
+@class pdf-night
+@info Permet de définir la couleur de police en couleur nuit lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.pdf-night[href*=".pdf"]{color:#0F1022;}
+/* 
+@class pdf-olive
+@info Permet de définir la couleur de police en couleur olive lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.pdf-olive[href*=".pdf"]{color: olive;}
+/* 
+@class pdf-orange
+@info Permet de définir la couleur de police en orange lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.pdf-orange[href*=".pdf"]{color: orange;}
+/* 
+@class pdf-purple
+@info Permet de définir la couleur de police en violet lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.pdf-purple[href*=".pdf"]{color: purple;}
+/* 
+@class pdf-red
+@info Permet de définir la couleur de police en rouge lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.pdf-red[href*=".pdf"]{color: red;}
+/* 
+@class pdf-silver
+@info Permet de définir la couleur de police en argenté lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.pdf-silver[href*=".pdf"]{color: silver;}
+/* 
+@class pdf-teal
+@info Permet de définir la couleur de police en blue canard lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.pdf-teal[href*=".pdf"]{color: teal;}
+/* 
+@class pdf-white
+@info Permet de définir la couleur de police en blanc lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.pdf-white[href*=".pdf"]{color: white;}
+/* 
+@class pdf-yellow
+@info Permet de définir la couleur de police en jaune lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.pdf-yellow[href*=".pdf"]{color: yellow;}
+/*
+@class pdf-pink 
+@info Permet de définir la couleur de police en rose lors d'un click 
+@target Toutes les balises 
+@example exemple 
+*/ 
+.pdf-pink[href*=".pdf"]{color: #ff9090;}
+/*
+@class pdf-magenta 
+@info Permet de définir la couleur de police en magenta lors d'un click 
+@target Toutes les balises 
+@example exemple 
+*/ 
+.pdf-magenta[href*=".pdf"]{color: #ff00d7;}
+/*
+@class pdf-water 
+@info Permet de définir la couleur de police en eau lors d'un click 
+@target Toutes les balises 
+@example exemple 
+*/ 
+.pdf-water[href*=".pdf"]{color: #0089c8;}
+/* @end_section */
+
+
+
+
+/*
+@title Couleurs des texte si une référence pdf est trouvée
+@info Définit les couleurs de polices lors d'un contenu de lien pdf
+@target Portée
+@example Visualiser l'exemple
+*/
+/* 
+@class active-aqua
+@info Permet de définir la couleur de police en bleu clair lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.active-aqua:active {color: aqua;}
+/* 
+@class active-black
+@info Permet de définir la couleur de police en noir lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.active-black:active {color: black;}
+/* 
+@class active-blue
+@info Permet de définir la couleur de police en bleu lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.active-blue:active {color: blue;}
+/* 
+@class active-fuchsia
+@info Permet de définir la couleur de police en fushia lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.active-fuchsia:active {color: fuchsia;}
+/* 
+@class active-grey
+@info Permet de définir la couleur de police en gris lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.active-grey:active {color: grey;}
+/* 
+@class active-green
+@info Permet de définir la couleur de police en vert lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.active-green:active {color: green;}
+/* 
+@class active-lime
+@info Permet de définir la couleur de police en couleur citron lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.active-lime:active {color: lime;}
+/* 
+@class active-maroon
+@info Permet de définir la couleur de police en marron lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.active-maroon:active {color: maroon;}
+/* 
+@class active-metallic-blue
+@info Permet de définir la couleur de police en bleu métallique lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.active-metallic-blue:active {color: #2F4A6D;}
+/* 
+@class active-navy
+@info Permet de définir la couleur de police en bleu océan lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.active-navy:active {color: navy;}
+/* 
+@class active-night
+@info Permet de définir la couleur de police en couleur nuit lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.active-night:active {color:#0F1022;}
+/* 
+@class active-olive
+@info Permet de définir la couleur de police en couleur olive lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.active-olive:active {color: olive;}
+/* 
+@class active-orange
+@info Permet de définir la couleur de police en orange lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.active-orange:active {color: orange;}
+/* 
+@class active-purple
+@info Permet de définir la couleur de police en violet lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.active-purple:active {color: purple;}
+/* 
+@class active-red
+@info Permet de définir la couleur de police en rouge lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.active-red:active {color: red;}
+/* 
+@class active-silver
+@info Permet de définir la couleur de police en argenté lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.active-silver:active {color: silver;}
+/* 
+@class active-teal
+@info Permet de définir la couleur de police en blue canard lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.active-teal:active {color: teal;}
+/* 
+@class active-white
+@info Permet de définir la couleur de police en blanc lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.active-white:active {color: white;}
+/* 
+@class active-yellow
+@info Permet de définir la couleur de police en jaune lors d'un click
+@target Toutes les balises 
+@example exemple
+*/
+.active-yellow:active {color: yellow;}
+/*
+@class active-pink 
+@info Permet de définir la couleur de police en rose lors d'un click 
+@target Toutes les balises 
+@example exemple 
+*/ 
+.active-pink:active {color: #ff9090;}
+/*
+@class active-magenta 
+@info Permet de définir la couleur de police en magenta lors d'un click 
+@target Toutes les balises 
+@example exemple 
+*/ 
+.active-magenta:active {color: #ff00d7;}
+/*
+@class active-water 
+@info Permet de définir la couleur de police en eau lors d'un click 
+@target Toutes les balises 
+@example exemple 
+*/ 
+.active-water:active {color: #0089c8;}
+/* @end_section */
+
+
+
+
+
+
+
+/* 
+@title Opacité de l'élément
+@info Définit l'opacité de l'élement
+@target Portée
+@example Visualisez l'exemple
+*/
+/*		
+@class opacity-10
+@info Définit l'opacité de l'élément à 10%
+@target Toutes les balises
+@example exemple
+*/
+.opacity-10 { opacity: 0.1; filter: alpha(opacity=10);}
+/*		
+@class opacity-20
+@info Définit l'opacité de l'élément à 20%
+@target Toutes les balises
+@example exemple
+*/
+.opacity-20 { opacity: 0.2; filter: alpha(opacity=20);}
+
+/*		
+@class opacity-30
+@info Définit l'opacité de l'élément à 30%
+@target Toutes les balises
+@example exemple
+*/
+.opacity-30 { opacity: 0.3; filter: alpha(opacity=30);}
+/*		
+@class opacity-40
+@info Définit l'opacité de l'élément à 40%
+@target Toutes les balises
+@example exemple
+*/
+.opacity-40 { opacity: 0.4; filter: alpha(opacity=40);}
+/*		
+@class opacity-50
+@info Définit l'opacité de l'élément à 50%
+@target Toutes les balises
+@example exemple
+*/
+.opacity-50 { opacity: 0.5; filter: alpha(opacity=50);}
+/*		
+@class opacity-60
+@info Définit l'opacité de l'élément à 60%
+@target Toutes les balises
+@example exemple
+*/
+.opacity-60 { opacity: 0.6; filter: alpha(opacity=60);}
+/*		
+@class opacity-70
+@info Définit l'opacité de l'élément à 70%
+@target Toutes les balises
+@example exemple
+*/
+.opacity-70 { opacity: 0.7; filter: alpha(opacity=70);}
+/*		
+@class opacity-80
+@info Définit l'opacité de l'élément à 80%
+@target Toutes les balises
+@example exemple
+*/
+.opacity-80 { opacity: 0.8; filter: alpha(opacity=80);}
+/*		
+@class opacity-90
+@info Définit l'opacité de l'élément à 90%
+@target Toutes les balises
+@example exemple
+*/
+.opacity-90 { opacity: 0.9; filter: alpha(opacity=90);}
+/*		
+@class opacity-100
+@info Définit l'opacité de l'élément à 100%
+@target Toutes les balises
+@example exemple
+*/
+.opacity-100 { opacity: 1; filter: alpha(opacity=100);}
+/*@end_section*/
+
+
+
+
+
+/* 
+@title Opacité au survol
+@info Définit l'opacité de l'élement au survol de ce dernier
+@target Portée
+@example Survolez l'exemple
+*/
+/*		
+@class hover-opacity-10
+@info Définit l'opacité de l'élément lors du survol à 10%
+@target Toutes les balises
+@example exemple
+*/
+.hover-opacity-10:hover { opacity: 0.1; filter: alpha(opacity=10);}
+/*		
+@class hover-opacity-20
+@info Définit l'opacité de l'élément lors du survol à 20%
+@target Toutes les balises
+@example exemple
+*/
+.hover-opacity-20:hover { opacity: 0.2; filter: alpha(opacity=20);}
+
+/*		
+@class hover-opacity-30
+@info Définit l'opacité de l'élément lors du survol à 30%
+@target Toutes les balises
+@example exemple
+*/
+.hover-opacity-30:hover { opacity: 0.3; filter: alpha(opacity=30);}
+/*		
+@class hover-opacity-40
+@info Définit l'opacité de l'élément lors du survol à 40%
+@target Toutes les balises
+@example exemple
+*/
+.hover-opacity-40:hover { opacity: 0.4; filter: alpha(opacity=40);}
+/*		
+@class hover-opacity-50
+@info Définit l'opacité de l'élément lors du survol à 50%
+@target Toutes les balises
+@example exemple
+*/
+.hover-opacity-50:hover { opacity: 0.5; filter: alpha(opacity=50);}
+/*		
+@class hover-opacity-60
+@info Définit l'opacité de l'élément lors du survol à 60%
+@target Toutes les balises
+@example exemple
+*/
+.hover-opacity-60:hover { opacity: 0.6; filter: alpha(opacity=60);}
+/*		
+@class hover-opacity-70
+@info Définit l'opacité de l'élément lors du survol à 70%
+@target Toutes les balises
+@example exemple
+*/
+.hover-opacity-70:hover { opacity: 0.7; filter: alpha(opacity=70);}
+/*		
+@class hover-opacity-80
+@info Définit l'opacité de l'élément lors du survol à 80%
+@target Toutes les balises
+@example exemple
+*/
+.hover-opacity-80:hover { opacity: 0.8; filter: alpha(opacity=80);}
+/*		
+@class hover-opacity-90
+@info Définit l'opacité de l'élément lors du survol à 90%
+@target Toutes les balises
+@example exemple
+*/
+.hover-opacity-90:hover { opacity: 0.9; filter: alpha(opacity=90);}
+/*		
+@class hover-opacity-100
+@info Définit l'opacité de l'élément lors du survol à 100%
+@target Toutes les balises
+@example exemple
+*/
+.hover-opacity-100:hover { opacity: 1; filter: alpha(opacity=100);}
+/*@end_section*/
+
+
+
+/* 
+@title Opacité au survol lors d'un appui
+@info Définit l'opacité de l'élement au survol de ce dernier lors d'un appui
+@target Portée
+@example Cliquez sur l'exemple
+*/
+/*		
+@class active-opacity-10
+@info Définit l'opacité de l'élément lors d'un click à 10%
+@target Toutes les balises
+@example exemple
+*/
+.active-opacity-10:active { opacity: 0.1; filter: alpha(opacity=10);}
+/*		
+@class active-opacity-20
+@info Définit l'opacité de l'élément lors d'un click à 20%
+@target Toutes les balises
+@example exemple
+*/
+.active-opacity-20:active { opacity: 0.2; filter: alpha(opacity=20);}
+
+/*		
+@class active-opacity-30
+@info Définit l'opacité de l'élément lors d'un click à 30%
+@target Toutes les balises
+@example exemple
+*/
+.active-opacity-30:active { opacity: 0.3; filter: alpha(opacity=30);}
+/*		
+@class active-opacity-40
+@info Définit l'opacité de l'élément lors d'un click à 40%
+@target Toutes les balises
+@example exemple
+*/
+.active-opacity-40:active { opacity: 0.4; filter: alpha(opacity=40);}
+/*		
+@class active-opacity-50
+@info Définit l'opacité de l'élément lors d'un click à 50%
+@target Toutes les balises
+@example exemple
+*/
+.active-opacity-50:active { opacity: 0.5; filter: alpha(opacity=50);}
+/*		
+@class active-opacity-60
+@info Définit l'opacité de l'élément lors d'un click à 60%
+@target Toutes les balises
+@example exemple
+*/
+.active-opacity-60:active { opacity: 0.6; filter: alpha(opacity=60);}
+/*		
+@class active-opacity-70
+@info Définit l'opacité de l'élément lors d'un click à 70%
+@target Toutes les balises
+@example exemple
+*/
+.active-opacity-70:active { opacity: 0.7; filter: alpha(opacity=70);}
+/*		
+@class active-opacity-80
+@info Définit l'opacité de l'élément lors d'un click à 80%
+@target Toutes les balises
+@example exemple
+*/
+.active-opacity-80:active { opacity: 0.8; filter: alpha(opacity=80);}
+/*		
+@class active-opacity-90
+@info Définit l'opacité de l'élément lors d'un click à 90%
+@target Toutes les balises
+@example exemple
+*/
+.active-opacity-90:active { opacity: 0.9; filter: alpha(opacity=90);}
+/*		
+@class active-opacity-100
+@info Définit l'opacité de l'élément lors d'un click à 100%
+@target Toutes les balises
+@example exemple
+*/
+.active-opacity-100:active { opacity: 1; filter: alpha(opacity=100);}
+/*@end_section*/
+/*1314*/
+</style>
+
+
+<!-- Fin de l'importation ddu fichier CSS -->
+
+
+
+<!-- Début de l'importation du fichier CSS -->
+
+<style type='text/css'>
+
+/*
+@project Bibliothèque de classes CSS pour la gestion des layout
+@author Nicolas LE GUERROUE
+@language CSS
+@language_version 3.4
+@version 1.0
+@date 21 aout 2019
+@presentation Cette bibliothèque permet de définir la mise en forme des layout
+@disconnected
+*/
+.div {overflow:auto; height:12em; width: 100%;background-color:#0F1022;border:1px solid black;text-align:left;color:white;}
+.render {overflow:auto; height:35em; width: 100%;background-color:#0F1022;color:white;border:1px solid black;text-align:left;}
+
+
+.hidden{display: none;}
+
+.body-full{margin:0;}
+
+.middle-page { /* Milieu de la page verticalement*/
+		margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
+  		transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+}
+
+.hr-vertical{ 
+  
+    border:         none;
+    border-left:    1px solid hsla(200, 10%, 50%,100);
+    height:         100%;
+    width:          1px;       
+}
+
+.w-5{width: 5%;}
+.w-10{width: 10%;}
+.w-15{width: 15%;}
+.w-20{width: 20%;}
+.w-25{width: 25%;}
+.w-30{width: 30%;}
+.w-33{width: 33%;}
+.w-40{width: 40%;}
+.w-45{width: 45%;}
+.w-50{width: 50%;}
+.w-55{width: 55%;}
+.w-60{width: 60%;}
+.w-65{width: 65%;}
+.w-70{width: 70%;}
+.w-75{width: 75%;}
+.w-80{width: 80%;}
+.w-85{width: 85%;}
+.w-90{width: 90%;}
+.w-95{width: 95%;}
+.w-100{width: 100%;}
+
+.hr-red { border: none; border-bottom: solid red 1px;}
+.hr-lime { border: none; border-bottom: solid lime 1px;}
+.hr-aqua { border: none; border-bottom: solid aqua 1px;}
+.hr-pink { border: none; border-bottom: solid pink 1px;}
+.hr-black { border: none; border-bottom: solid black 1px;}
+
+article.hide {display: none;}
+
+/* Arrondir les coins*/
+.rounded-5 {border-radius: 5px;}
+.rounded-10 {border-radius: 10px;}
+.rounded-15 {border-radius: 15px;}
+.rounded-20 {border-radius: 20px;}
+.rounded-25 {border-radius: 25px;}
+.rounded-30 {border-radius: 30px;}
+
+.border {
+  border: 1px solid #dee2e6 !important;
+}
+
+.border-top {
+  border-top: 1px solid #dee2e6 !important;
+}
+
+.border-right {
+  border-right: 1px solid #dee2e6 !important;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+.border-left {
+  border-left: 1px solid #dee2e6 !important;
+}
+
+.border-primary {
+  border-color: #007bff !important;
+}
+
+.border-secondary {
+  border-color: #6c757d !important;
+}
+
+.border-success {
+  border-color: #28a745 !important;
+}
+
+.border-info {
+  border-color: #17a2b8 !important;
+}
+
+.border-warning {
+  border-color: #ffc107 !important;
+}
+
+.border-danger {
+  border-color: #dc3545 !important;
+}
+
+.border-light {
+  border-color: #f8f9fa !important;
+}
+
+.border-dark {
+  border-color: #343a40 !important;
+}
+
+.border-white {
+  border-color: #fff !important;
+}
+
+.rounded {
+  border-radius: 0.25rem !important;
+}
+
+.rounded-top {
+  border-top-left-radius: 0.25rem !important;
+  border-top-right-radius: 0.25rem !important;
+}
+
+.rounded-right {
+  border-top-right-radius: 0.25rem !important;
+  border-bottom-right-radius: 0.25rem !important;
+}
+
+.rounded-bottom {
+  border-bottom-right-radius: 0.25rem !important;
+  border-bottom-left-radius: 0.25rem !important;
+}
+
+.rounded-left {
+  border-top-left-radius: 0.25rem !important;
+  border-bottom-left-radius: 0.25rem !important;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.rounded-pill {
+  border-radius: 50rem !important;
+}
+
+
+.bordure_verticale {
+height: 100%;
+padding-left: 1px;
+padding-right: 2%;
+border-right: 1px solid silver;
+}
+
+/* Marges des blocs */
+.margin-1{margin-left: 1%;margin-right: 1%;}
+.margin-2{margin-left: 2%;margin-right: 2%;}
+.margin-3{margin-left: 3%;margin-right: 3%;}
+.margin-4{margin-left: 4%;margin-right: 4%;}
+.margin-5{margin-left: 5%;margin-right: 5%;}
+.margin-10{margin-left: 10%;margin-right: 10%;}
+.margin-15{margin-left: 15%;margin-right: 15%;}
+.margin-20{margin-left: 20%;margin-right: 20%;}
+.margin-25{margin-left: 25%;margin-right: 25%;}
+.margin-30{margin-left: 30%;margin-right: 30%;}
+.margin-35{margin-left: 35%;margin-right: 15%;}
+.margin-40{margin-left: 40%;margin-right: 40%;}
+.margin-45{margin-left: 45%;margin-right: 45%;}
+
+.margin-top-1{margin-top: 1%;}
+.margin-top-2{margin-top: 2%;}
+.margin-top-3{margin-top: 3%;}
+.margin-top-4{margin-top: 4%;}
+.margin-top-5{margin-top: 5%;}
+.margin-top-10{margin-top: 10%;}
+.margin-top-15{margin-top: 15%;}
+.margin-top-20{margin-top: 20%;}
+.margin-top-25{margin-top: 25%;}
+.margin-top-30{margin-top: 30%;}
+.margin-top-35{margin-top: 35%;}
+.margin-top-40{margin-top: 40%;}
+.margin-top-45{margin-top: 45%;}
+
+.margin-bottom-1{margin-bottom: 1%;}
+.margin-bottom-2{margin-bottom: 2%;}
+.margin-bottom-3{margin-bottom: 3%;}
+.margin-bottom-4{margin-bottom: 4%;}
+.margin-bottom-5{margin-bottom: 5%;}
+.margin-bottom-10{margin-bottom: 10%;}
+.margin-bottom-15{margin-bottom: 15%;}
+.margin-bottom-20{margin-bottom: 20%;}
+.margin-bottom-25{margin-bottom: 25%;}
+.margin-bottom-30{margin-bottom: 30%;}
+.margin-bottom-35{margin-bottom: 35%;}
+.margin-bottom-40{margin-bottom: 40%;}
+.margin-bottom-45{margin-bottom: 45%;}
+
+.padding-top-1{padding-top: 1%;}
+.padding-top-2{padding-top: 2%;}
+.padding-top-3{padding-top: 3%;}
+.padding-top-4{padding-top: 4%;}
+.padding-top-5{padding-top: 5%;}
+.padding-top-10{padding-top: 10%;}
+.padding-top-15{padding-top: 15%;}
+.padding-top-20{padding-top: 20%;}
+.padding-top-25{padding-top: 25%;}
+.padding-top-30{padding-top: 30%;}
+.padding-top-35{padding-top: 35%;}
+.padding-top-40{padding-top: 40%;}
+.padding-top-45{padding-top: 45%;}
+
+.padding-bottom-1{padding-bottom: 1%;}
+.padding-bottom-2{padding-bottom: 2%;}
+.padding-bottom-3{padding-bottom: 3%;}
+.padding-bottom-4{padding-bottom: 4%;}
+.padding-bottom-5{padding-bottom: 5%;}
+.padding-bottom-10{padding-bottom: 10%;}
+.padding-bottom-15{padding-bottom: 15%;}
+.padding-bottom-20{padding-bottom: 20%;}
+.padding-bottom-25{padding-bottom: 25%;}
+.padding-bottom-30{padding-bottom: 30%;}
+.padding-bottom-35{padding-bottom: 35%;}
+.padding-bottom-40{padding-bottom: 40%;}
+.padding-bottom-45{padding-bottom: 45%;}
+
+.padding-1{padding-right: 1%;padding-left: 1%;}
+.padding-2{padding-right: 2%;padding-left: 2%;}
+.padding-3{padding-right: 3%;padding-left: 3%;}
+.padding-4{padding-right: 4%;padding-left: 4%;}
+.padding-5{padding-right: 5%;padding-left: 5%;}
+.padding-10{padding-right: 10%;padding-left: 10%;}
+.padding-15{padding-right: 15%;padding-left: 15%;}
+.padding-20{padding-right: 20%;padding-left: 20%;}
+.padding-25{padding-right: 25%;padding-left: 25%;}
+.padding-30{padding-right: 30%;padding-left: 30%;}
+.padding-35{padding-right: 35%;padding-left: 15%;}
+.padding-40{padding-right: 40%;padding-left: 40%;}
+.padding-45{padding-right: 45%;padding-left: 45%;}
+
+/* Polices génériques */
+.serif {font-family: : serif;}
+.sans-serif {font-family: : sans-serif;}
+.monospace {font-family: : monospace;}
+.cursive {font-family: : cursive;}
+.fantasy {font-family: : fantasy;}
+
+/* Polices spécifiques*/
+.font-courrier{font-family: Courier New,Courier;  }
+
+.font-arial-serif{font-family: arial,  monospace;  }
+.font-arial-sans-serif{font-family: arial, sans-serif;  }
+.font-arial-monospace{font-family: arial, monospace;  }
+.font-arial-cursive{font-family: arial, cursive;  }
+.font-arial-fantasy{font-family: Lucida, fantasy;  }
+
+.font-lucida-serif{font-family: Lucida, monospace;  }
+.font-lucida-sans-serif{font-family: Lucida, sans-serif;  }
+.font-lucida-monospace{font-family: Lucida, monospace;  }
+.font-lucida-cursive{font-family: Lucida, cursive;  }
+.font-lucida-fantasy{font-family: Lucida, fantasy;  }
+
+.font-luminari-serif{font-family: luminari, monospace;  }
+.font-luminari-sans-serif{font-family: luminari, sans-serif;  }
+.font-luminari-monospace{font-family: luminari, monospace;  }
+.font-luminari-cursive{font-family: luminari, cursive;  }
+.font-luminari-fantasy{font-family: luminari, fantasy;  }
+
+
+
+
+/* Style d'affichage */
+.font-normal {font-style: normal;}
+.font-italic {font-style: italic;}
+.font-oblique {font-style: oblique;}
+
+/* Dimensions */
+.width-max{width: 100%;}
+.height-max{max-height: 100%;}
+/* Alignements */
+.center{text-align: center;}
+.left{text-align: left;}
+.right{text-align: right;}
+
+.top{vertical-align: top;}
+.middle{vertical-align: middle;}
+.bottom{vertical-align: bottom;}
+
+
+/* Listes (ul) MENUS*/
+.ul-round{list-style-type: circle;}
+.ul-square{list-style-type: square;}
+.ul-no-style{list-style-type: none; margin: 0; padding: 0;}
+
+
+/* Display */
+/* affiche sur des lignes séparées */
+.display-block{display: block;}
+
+/* affiche sur une même ligne -> utile pour des formulaires*/
+.display-inline{display: inline;}
+
+.display-hidden{display:none;}
+
+
+.float-left {float: left;}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
+.col-auto{
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.col-auto {
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+
+.col-1 {
+  -ms-flex: 0 0 8.333333%;
+  flex: 0 0 8.333333%;
+  max-width: 8.333333%;
+}
+
+.col-2 {
+  -ms-flex: 0 0 16.666667%;
+  flex: 0 0 16.666667%;
+  max-width: 16.666667%;
+}
+
+.col-3 {
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.col-4 {
+  -ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+
+.col-5 {
+  -ms-flex: 0 0 41.666667%;
+  flex: 0 0 41.666667%;
+  max-width: 41.666667%;
+}
+
+.col-6 {
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col-7 {
+  -ms-flex: 0 0 58.333333%;
+  flex: 0 0 58.333333%;
+  max-width: 58.333333%;
+}
+
+.col-8 {
+  -ms-flex: 0 0 66.666667%;
+  flex: 0 0 66.666667%;
+  max-width: 66.666667%;
+}
+
+.col-9 {
+  -ms-flex: 0 0 75%;
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+.col-10 {
+  -ms-flex: 0 0 83.333333%;
+  flex: 0 0 83.333333%;
+  max-width: 83.333333%;
+}
+
+.col-11 {
+  -ms-flex: 0 0 91.666667%;
+  flex: 0 0 91.666667%;
+  max-width: 91.666667%;
+}
+
+.col-12 {
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+
+  .article-main
+  {
+    margin-left: 15%;
+    border-left: 1px solid black;
+    padding-left: 10px;
+
+  }
+
+
+  .menu-left
+  {
+      float: left;
+      width: 15%;
+      color:black;
+      position: sticky;
+      top : 0%;
+      min-height: 45em;
+
+
+  }
+</style>
+
+
+<!-- Fin de l'importation ddu fichier CSS -->
+
+
+
+<!-- Début de l'importation du fichier CSS -->
+
+<style type='text/css'>
+/*
+@project Bibliothèque de classes CSS pour la gestion des panels
+@author Nicolas LE GUERROUE
+@language CSS
+@language_version 3.4
+@version 1.0
+@date 21 aout 2019
+@presentation Cette bibliothèque permet de définir la mise en forme des panels
+@disconnected
+*/
+
+.panel {
+  margin-bottom: 20px;
+  border: 2px solid grey; /* border: 3px solid transparent;*/
+  border-radius: 4px;
+
+}
+
+.panel-body {
+  padding: 15px;
+  border: 1px solid grey; /* border: 3px solid transparent;*/
+}
+
+.panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid grey;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+
+}
+
+
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+
+.panel-footer {
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-top: 1px solid grey;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+
+.panel-primary {
+  border-color: #428bca;
+}
+
+.panel-primary > .panel-heading { /* si panel primary est un parent de panel heading */
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #428bca;
+}
+
+.panel-success {
+  border-color: #d6e9c6;
+}
+
+.panel-success > .panel-heading {
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.panel-warning {
+  border-color: #faebcc;
+}
+
+.panel-warning > .panel-heading {
+  color: #c09853;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+
+.panel-danger {
+  border-color: #ebccd1;
+}
+
+.panel-danger > .panel-heading {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+.panel-info {
+  border-color: #bce8f1;
+}
+
+.panel-info > .panel-heading {
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.panel-light {
+  border-color: #505050;
+}
+
+.panel-light > .panel-heading {
+  color: #3a87ad;
+  background-color: #EEEEEE;
+  border-color: #505050;
+}
+</style>
+
+
+<!-- Fin de l'importation ddu fichier CSS -->
+
+
+
+<!-- Début de l'importation du fichier CSS -->
+
+<style type='text/css'>
+/*
+@project Bibliothèque de classes CSS pour la gestion des menu
+@author Nicolas LE GUERROUE
+@language CSS
+@language_version 3.4
+@version 1.0
+@date 21 aout 2019
+@presentation Cette bibliothèque permet de définir la mise en forme des menu
+@disconnected
+*/
+.menu {
+  float:left;
+  background-color: red;
+
+}
+
+
+</style>
+
+
+<!-- Fin de l'importation ddu fichier CSS -->
+
+
+
+<!-- Début de l'importation du fichier CSS -->
+
+<style type='text/css'>
+/*
+@project Bibliothèque de classes CSS pour la gestion des liens
+@author Nicolas LE GUERROUE
+@language CSS
+@language_version 3.4
+@version 1.0
+@date 21 aout 2019
+@presentation Cette bibliothèque permet de définir la mise en forme des liens
+@disconnected
+*/
+/* couleur d'arrière plan d'un lien non visité */
+.link-bg-aqua:link  {background-color: aqua;}
+.link-bg-black:link  {background-color: black;}
+.link-bg-blue:link  {background-color: blue;}
+.link-bg-fuchsia:link  {background-color: fuchsia;}
+.link-bg-grey:link  {background-color: grey;}
+.link-bg-green:link  {background-color: green;}
+.link-bg-lime:link  {background-color: lime;}
+.link-bg-maroon:link  {background-color: maroon;}
+.link-bg-navy:link  {background-color: navy;}
+.link-bg-olive:link  {background-color: olive;}
+.link-bg-purple:link  {background-color: purple;}
+.link-bg-red:link  {background-color: red;}
+.link-bg-silver:link  {background-color: silver;}
+.link-bg-teal:link  {background-color: teal;}
+.link-bg-white:link  {background-color: white;}
+.link-bg-yellow:link  {background-color: yellow;}
+.link-bg-orange:link  {background-color: orange;}
+.underline {text-decoration:underline;}
+/* couleur de texte d'un lien non visté */
+.link-aqua:link  {color: aqua;}
+.link-black:link  {color: black;}
+.link-blue:link  {color: blue;}
+.link-fuchsia:link  {color: fuchsia;}
+.link-grey:link  {color: grey;}
+.link-green:link  {color: green;}
+.link-lime:link  {color: lime;}
+.link-maroon:link  {color: maroon;}
+.link-navy:link  {color: navy;}
+.link-olive:link  {color: olive;}
+.link-purple:link  {color: purple;}
+.link-red:link  {color: red;}
+.link-silver:link  {color: silver;}
+.link-teal:link  {color: teal;}
+.link-white:link  {color: white;}
+.link-yellow:link  {color: yellow;}
+.link-orange:link  {color: orange;}
+
+/* couleur de texte d'un lien non visté pour une animation de couleur future*/
+.link-aqua-animation:link  {	color: aqua;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-black-animation:link  	{color: black;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-blue-animation:link  {	color: blue;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-fuchsia-animation:link	  {color: fuchsia;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-grey-animation:link  {	color: grey;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-green-animation:link  	{color: green;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-lime-animation:link  {	color: lime;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-maroon-animation:link 	 {color: maroon;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-navy-animation:link  {	color: navy;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-olive-animation:link  	{color: olive;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-purple-animation:link 	 {color: purple;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-red-animation:link  {color: red;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-silver-animation:link 	 {color: silver;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-teal-animation:link  {	color: teal;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-white-animation:link  	{color: white;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-yellow-animation:link 	 {color: yellow;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+.link-orange-animation:link 	 {color: orange;
+					transition-property:color;
+					transition-duration:0.3s;
+					text-decoration: none;
+}
+
+/* couleur d'arrière plan d'un lien que l'utilisateur à déja visité */
+.link-visited-bg-aqua:visited  {background-color: aqua;}
+.link-visited-bg-black:visited  {background-color: black;}
+.link-visited-bg-blue:visited  {background-color: blue;}
+.link-visited-bg-fuchsia:visited  {background-color: fuchsia;}
+.link-visited-bg-grey:visited  {background-color: grey;}
+.link-visited-bg-green:visited  {background-color: green;}
+.link-visited-bg-lime:visited  {background-color: lime;}
+.link-visited-bg-maroon:visited  {background-color: maroon;}
+.link-visited-bg-navy:visited  {background-color: navy;}
+.link-visited-bg-olive:visited  {background-color: olive;}
+.link-visited-bg-purple:visited  {background-color: purple;}
+.link-visited-bg-red:visited  {background-color: red;}
+.link-visited-bg-silver:visited  {background-color: silver;}
+.link-visited-bg-teal:visited  {background-color: teal;}
+.link-visited-bg-white:visited  {background-color: white;}
+.link-visited-bg-yellow:visited  {background-color: yellow;}
+.link-visited-bg-orange:visited  {background-color: orange;}
+
+/* couleur de texte d'un lien que l'utilisateur à déja visité */
+.link-visited-aqua:visited  {color: aqua;}
+.link-visited-black:visited  {color: black;}
+.link-visited-blue:visited  {color: blue;}
+.link-visited-fuchsia:visited  {color: fuchsia;}
+.link-visited-grey:visited  {color: grey;}
+.link-visited-green:visited  {color: green;}
+.link-visited-lime:visited  {color: lime;}
+.link-visited-maroon:visited  {color: maroon;}
+.link-visited-navy:visited  {color: navy;}
+.link-visited-olive:visited  {color: olive;}
+.link-visited-purple:visited  {color: purple;}
+.link-visited-red:visited  {color: red;}
+.link-visited-silver:visited  {color: silver;}
+.link-visited-teal:visited  {color: teal;}
+.link-visited-white:visited  {color: white;}
+.link-visited-yellow:visited  {color: yellow;}
+.link-visited-orange:visited  {color: orange;}
+
+/* couleur d'arrière plan d'un lien que l'utilisateur clique */
+.link-active-bg-aqua:active  {background-color: aqua;}
+.link-active-bg-black:active  {background-color: black;}
+.link-active-bg-blue:active  {background-color: blue;}
+.link-active-bg-fuchsia:active  {background-color: fuchsia;}
+.link-active-bg-grey:active  {background-color: grey;}
+.link-active-bg-green:active  {background-color: green;}
+.link-active-bg-lime:active  {background-color: lime;}
+.link-active-bg-maroon:active  {background-color: maroon;}
+.link-active-bg-navy:active  {background-color: navy;}
+.link-active-bg-olive:active  {background-color: olive;}
+.link-active-bg-purple:active  {background-color: purple;}
+.link-active-bg-red:active  {background-color: red;}
+.link-active-bg-silver:active  {background-color: silver;}
+.link-active-bg-teal:active  {background-color: teal;}
+.link-active-bg-white:active  {background-color: white;}
+.link-active-bg-yellow:active  {background-color: yellow;}
+.link-active-bg-orange:active  {background-color: orange;}
+
+/* couleur d'arrière plan d'un lien que l'utilisateur survol */
+.link-hover-bg-aqua:hover  {background-color: aqua;}
+.link-hover-bg-black:hover  {background-color: black;}
+.link-hover-bg-blue:hover  {background-color: blue;}
+.link-hover-bg-fuchsia:hover  {background-color: fuchsia;}
+.link-hover-bg-grey:hover  {background-color: grey;}
+.link-hover-bg-green:hover  {background-color: green;}
+.link-hover-bg-lime:hover  {background-color: lime;}
+.link-hover-bg-maroon:hover  {background-color: maroon;}
+.link-hover-bg-navy:hover  {background-color: navy;}
+.link-hover-bg-olive:hover  {background-color: olive;}
+.link-hover-bg-purple:hover  {background-color: purple;}
+.link-hover-bg-red:hover  {background-color: red;}
+.link-hover-bg-silver:hover  {background-color: silver;}
+.link-hover-bg-teal:hover  {background-color: teal;}
+.link-hover-bg-white:hover  {background-color: white; text-decoration: none;}
+.link-hover-bg-yellow:hover  {background-color: yellow;}
+.link-hover-bg-orange:hover  {background-color: orange;}
+
+/* couleur de texte d'un lien que l'utilisateur survol */
+.link-hover-aqua:hover  {color: aqua;}
+.link-hover-black:hover  {color: black;}
+.link-hover-blue:hover  {color: blue;}
+.link-hover-fuchsia:hover  {color: fuchsia;}
+.link-hover-grey:hover  {color: grey;}
+.link-hover-green:hover  {color: green;}
+.link-hover-lime:hover  {color: lime;}
+.link-hover-maroon:hover  {color: maroon;}
+.link-hover-navy:hover  {color: navy;}
+.link-hover-olive:hover  {color: olive;}
+.link-hover-purple:hover  {color: purple;}
+.link-hover-red:hover  {color: red;}
+.link-hover-silver:hover  {color: silver;}
+.link-hover-teal:hover  {color: teal;}
+.link-hover-white:hover  {color: white;}
+.link-hover-yellow:hover  {color: yellow;}
+.link-hover-orange:hover  {color: orange;}
+
+/* couleur de texte d'un lien que l'utilisateur clique */
+.link-active-aqua:active  {color: aqua;}
+.link-active-black:active  {color: black;}
+.link-active-blue:active  {color: blue;}
+.link-active-fuchsia:active  {color: fuchsia;}
+.link-active-grey:active  {color: grey;}
+.link-active-green:active  {color: green;}
+.link-active-lime:active  {color: lime;}
+.link-active-maroon:active  {color: maroon;}
+.link-active-navy:active  {color: navy;}
+.link-active-olive:active  {color: olive;}
+.link-active-purple:active  {color: purple;}
+.link-active-red:active  {color: red;}
+.link-active-silver:active  {color: silver;}
+.link-active-teal:active  {color: teal;}
+.link-active-white:active  {color: white;}
+.link-active-yellow:active  {color: yellow;}
+.link-active-orange:active  {color: orange;}
+
+
+
+/* effet sur le lien au repos */
+.link-underline:link {text-decoration: underline;}
+
+/* effet sur le lien une vois visité */
+.link-visited-underline:visited {text-decoration: underline;}
+
+/* effet sur le lien au survol */
+.link-hover-underline:hover {text-decoration: underline;}
+
+/* effet sur le lien au moment du click */
+.link-active-underline:active {text-decoration: underline;}
+</style>
+
+
+<!-- Fin de l'importation ddu fichier CSS -->
+
+
+
+<!-- Début de l'importation du fichier CSS -->
+
+<style type='text/css'>
+/*
+@project Bibliothèque de classes CSS pour la gestion des formulaires
+@author Nicolas LE GUERROUE
+@language CSS
+@language_version 3.4
+@version 1.0
+@date 21 aout 2019
+@presentation Cette bibliothèque permet de définir la mise en forme des formulaires
+@disconnected
+*/
+
+/*
+@begin
+@class input-text
+@method none
+@des Permet de mettre en forme les champs de saisie de texte dans les formulaires
+@end
+*/
+
+.input-text {
+  border-radius: 5px;
+  border-color: grey;
+  border-width: 0.04em;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 1em;
+  box-shadow: transparent;
+}
+/*
+@begin
+@class input-text
+@method hover
+@des Permet de mettre en forme les champs de saisie de texte dans les formulaires lors de son survol
+@end
+*/
+.input-text:hover {
+  border-color: orange;
+  color: black;
+  border-width: 0.1em;
+  -webkit-transition: border-color ease-in-out 0.3s, box-shadow ease-in-out 0.3s;
+}
+/*
+@begin
+@class input-text
+@method active
+@des Permet de mettre en forme les champs de saisie de texte dans les formulaires lors d'un appui long
+@end
+*/
+.input-text:active {
+  border-color: red;
+  color: black;
+  border-width: 0.15em;
+  -webkit-transition: border-color ease-in-out 0.3s, box-shadow ease-in-out 0.3s;
+}
+
+.input-select {
+  border-radius: 4px;
+  border-color: grey;
+  border-width: 0.04em;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 1em;
+  box-shadow: transparent;
+}
+
+.input-select:active {
+  border-color: orange;
+  color: black;
+  border-width: 0.1em;
+  -webkit-transition: border-color ease-in-out 0.3s, box-shadow ease-in-out 0.3s;
+}
+
+
+</style>
+
+
+<!-- Fin de l'importation ddu fichier CSS -->
+
+
+
+<!-- Début de l'importation du fichier CSS -->
+
+<style type='text/css'>
+/*
+@project Bibliothèque de classes CSS pour la gestion des tableaux
+@author Nicolas LE GUERROUE
+@language CSS
+@language_version 3.4
+@version 1.0
+@date 21 aout 2019
+@presentation Cette bibliothèque permet de définir la mise en forme des tableaux
+@disconnected
+*/
+/* 		<table class="table table-responsive table-row-height-5 border-aqua table-hover-bg-white table-alternate-bg-aqua"> */
+.table{ overflow-x: auto;}
+
+/* Table adaptable : quand il y a trop d'élément, un curseur apparait; */
+.table-responsive{ border-collapse: collapse;}
+
+/* Epaisseur des lignes */
+.table-row-height-1 td, .table-row-height-1 th {padding: 1px;}
+.table-row-height-2 td, .table-row-height-2 th {padding: 2px;}
+.table-row-height-3 td, .table-row-height-3 th {padding: 3px;}
+.table-row-height-4 td, .table-row-height-4 th {padding: 4px;}
+.table-row-height-5 td, .table-row-height-5 th {padding: 5px;}
+.table-row-height-6 td, .table-row-height-6 th {padding: 6px;}
+.table-row-height-7 td, .table-row-height-7 th {padding: 7px;}
+.table-row-height-8 td, .table-row-height-8 th {padding: 8px;}
+
+
+/* Couleurs des bordures en général*/
+.border-aqua  { border: 1px solid aqua;}
+.border-black  { border: 1px solid black;}
+.border-blue   { border: 1px solid blue;}
+.border-fuchsia  { border: 1px solid fuchsia;}
+.border-grey   { border: 1px solid grey;}
+.border-green  { border: 1px solid green;}
+.border-lime   { border: 1px solid lime;}
+.border-maroon  { border: 1px solid maroon;}
+.border-navy   { border: 1px solid navy;}
+.border-olive  { border: 1px solid olive;}
+.border-purple  { border: 1px solid purple;}
+.border-red  {border: 1px solid red;}
+.border-silver { border: 1px solid silver;}
+.border-teal   { border: 1px solid teal;}
+.border-white  { border: 1px solid white;}
+.border-yellow  { border: 1px solid yellow;}
+.border-orange  { border: 1px solid orange;}
+
+/* Couleurs des bordures des tableau*/
+.table-border-aqua td, .table-border-aqua th { border: 1px solid aqua;}
+.table-border-black td, .table-border-black th  { border: 1px solid black;}
+.table-border-blue td, .table-border-blue th  { border: 1px solid blue;}
+.table-border-fuchsia td, .table-border-fuschia th  { border: 1px solid fuchsia;}
+.table-border-grey td, .table-border-grey th  { border: 1px solid grey;}
+.table-border-green td, .table-border-green th  { border: 1px solid green;}
+.table-border-lime td, .table-border-lime th  { border: 1px solid lime;}
+.table-border-maroon td, .table-border-maroon th  { border: 1px solid maroon;}
+.table-border-navy td, .table-border-navy th  { border: 1px solid navy;}
+.table-border-olive td, .table-border-olive th  { border: 1px solid olive;}
+.table-border-purple td, .table-border-purple th  { border: 1px solid purple;}
+.table-border-red td, .table-border-red th  { border: 1px solid red;}
+.table-border-silver td, .table-border-silver th  { border: 1px solid silver;}
+.table-border-teal td, .table-border-teal th  { border: 1px solid teal;}
+.table-border-white td, .table-border-white th  { border: 1px solid white;}
+.table-border-yellow td, .table-border-yellow th  { border: 1px solid yellow;}
+.table-border-orange td, .table-border-orange th  { border: 1px solid orange;}
+
+/* Couleurs de l'arrière plan lors du survol de la ligne */
+.table-hover-bg-aqua tr:hover {background-color: aqua;}
+.table-hover-bg-black tr:hover {background-color: black;}
+.table-hover-bg-blue tr:hover {background-color: blue;}
+.table-hover-bg-fuchsia tr:hover {background-color: fuchsia;}
+.table-hover-bg-grey tr:hover {background-color: grey;}
+.table-hover-bg-green tr:hover {background-color: green;}
+.table-hover-bg-lime tr:hover {background-color: lime;}
+.table-hover-bg-maroon tr:hover {background-color: maroon;}
+.table-hover-bg-navy tr:hover {background-color: navy;}
+.table-hover-bg-olive tr:hover {background-color: olive;}
+.table-hover-bg-purple tr:hover {background-color: purple;}
+.table-hover-bg-red tr:hover {background-color: red;}
+.table-hover-bg-silver tr:hover {background-color: silver;}
+.table-hover-bg-teal tr:hover {background-color: teal;}
+.table-hover-bg-white tr:hover {background-color: white;}
+.table-hover-bg-yellow tr:hover {background-color: yellow;}
+.table-hover-bg-orange tr:hover {background-color: orange;}
+
+/* Couleurs du texte lors du survol de la ligne */
+.table-hover-aqua tr:hover {color: aqua;}
+.table-hover-black tr:hover {color: black;}
+.table-hover-blue tr:hover {color: blue;}
+.table-hover-fuchsia tr:hover {color: fuchsia;}
+.table-hover-grey tr:hover {color: grey;}
+.table-hover-green tr:hover {color: green;}
+.table-hover-lime tr:hover {color: lime;}
+.table-hover-maroon tr:hover {color: maroon;}
+.table-hover-navy tr:hover {color: navy;}
+.table-hover-olive tr:hover {color: olive;}
+.table-hover-purple tr:hover {color: purple;}
+.table-hover-red tr:hover {color: red;}
+.table-hover-silver tr:hover {color: silver;}
+.table-hover-teal tr:hover {color: teal;}
+.table-hover-white tr:hover {color: white;}
+.table-hover-yellow tr:hover {color: yellow;}
+.table-hover-orange tr:hover {color: orange;}
+
+
+
+/* Couleurs des titres */
+.table-th-aqua th  {color: aqua;}
+.table-th-black th  {color: black;}
+.table-th-blue th  {color: blue;}
+.table-th-fuchsia th  {color: fuchsia;}
+.table-th-grey th  {color: grey;}
+.table-th-green th  {color: green;}
+.table-th-lime th  {color: lime;}
+.table-th-maroon th  {color: maroon;}
+.table-th-navy th  {color: navy;}
+.table-th-olive th  {color: olive;}
+.table-th-purple th  {color: purple;}
+.table-th-red th  {color: red;}
+.table-th-silver th  {color: silver;}
+.table-th-teal th  {color: teal;}
+.table-th-white th  {color: white;}
+.table-th-yellow th  {color: yellow;}
+.table-th-orange th  {color: orange;}
+
+/* Couleurs arrière plan des titres */
+.table-th-bg-aqua th  {background-color: aqua;}
+.table-th-bg-black th  {background-color: black;}
+.table-th-bg-blue th  {background-color: blue;}
+.table-th-bg-fuchsia th  {background-color: fuchsia;}
+.table-th-bg-grey th  {background-color: grey;}
+.table-th-bg-green th  {background-color: green;}
+.table-th-bg-lime th  {background-color: lime;}
+.table-th-bg-maroon th  {background-color: maroon;}
+.table-th-bg-navy th  {background-color: navy;}
+.table-th-bg-olive th  {background-color: olive;}
+.table-th-bg-purple th  {background-color: purple;}
+.table-th-bg-red th  {background-color: red;}
+.table-th-bg-silver th  {background-color: silver;}
+.table-th-bg-teal th  {background-color: teal;}
+.table-th-bg-white th  {background-color: white;}
+.table-th-bg-yellow th  {background-color: yellow;}
+.table-th-bg-orange th  {background-color: orange;}
+
+
+/* Couleur arrrière plan des lignes en alternance */
+.table-alternate-bg-aqua tr:nth-child(even)  {background-color: aqua;}
+.table-alternate-bg-black tr:nth-child(even)  {background-color: black;}
+.table-alternate-bg-blue tr:nth-child(even)  {background-color: blue;}
+.table-alternate-bg-fuchsia tr:nth-child(even)  {background-color: fuchsia;}
+.table-alternate-bg-grey tr:nth-child(even)  {background-color: grey;}
+.table-alternate-bg-green tr:nth-child(even)  {background-color: green;}
+.table-alternate-bg-lime tr:nth-child(even)  {background-color: lime;}
+.table-alternate-bg-maroon tr:nth-child(even)  {background-color: maroon;}
+.table-alternate-bg-navy tr:nth-child(even)  {background-color: navy;}
+.table-alternate-bg-olive tr:nth-child(even)  {background-color: olive;}
+.table-alternate-bg-purple tr:nth-child(even)  {background-color: purple;}
+.table-alternate-bg-red tr:nth-child(even)  {background-color: red;}
+.table-alternate-bg-silver tr:nth-child(even)  {background-color: silver;}
+.table-alternate-bg-teal tr:nth-child(even)  {background-color: teal;}
+.table-alternate-bg-white tr:nth-child(even)  {background-color: white;}
+.table-alternate-bg-yellow tr:nth-child(even)  {background-color: yellow;}
+.table-alternate-bg-orange tr:nth-child(even)  {background-color: orange;}
+
+
+/* Couleur texte des lignes en alternance */
+.table-alternate-aqua tr:nth-child(even)  {color: aqua;}
+.table-alternate-black tr:nth-child(even)  {color: black;}
+.table-alternate-blue tr:nth-child(even)  {color: blue;}
+.table-alternate-fuchsia tr:nth-child(even)  {color: fuchsia;}
+.table-alternate-grey tr:nth-child(even)  {color: grey;}
+.table-alternate-green tr:nth-child(even)  {color: green;}
+.table-alternate-lime tr:nth-child(even)  {color: lime;}
+.table-alternate-maroon tr:nth-child(even)  {color: maroon;}
+.table-alternate-navy tr:nth-child(even)  {color: navy;}
+.table-alternate-olive tr:nth-child(even)  {color: olive;}
+.table-alternate-purple tr:nth-child(even)  {color: purple;}
+.table-alternate-red tr:nth-child(even)  {color: red;}
+.table-alternate-silver tr:nth-child(even)  {color: silver;}
+.table-alternate-teal tr:nth-child(even)  {color: teal;}
+.table-alternate-white tr:nth-child(even)  {color: white;}
+.table-alternate-yellow tr:nth-child(even)  {color: yellow;}
+.table-alternate-orange tr:nth-child(even)  {color: orange;}
+
+/* Disposition des lignes */
+.table-td-center td {text-align: center;}
+.table-td-left td {text-align: left;}
+.table-td-right td {text-align: right;}
+
+.table-td-top td {vertical-align: top;}
+.table-td-bottom td {vertical-align: bottom;}
+/* Disposition des titres */
+.table-td-center th {text-align: center;}
+.table-th-left th {text-align: left;}
+.table-th-right th {text-align: right;}
+
+/* Disposition des  lignes et des titres (commun)*/
+.table-all-center th, .table-all-center td {text-align: center;}
+.table-all-left th, .table-all-left td {text-align: left;}
+.table-all-right th, .table-all-right td {text-align: right;}
+
+.table-max-width {max-width: 100%;}
+</style>
+
+
+<!-- Fin de l'importation ddu fichier CSS -->
+
+
+
+<!-- Début de l'importation du fichier CSS -->
+
+<style type='text/css'>
+/*
+@project Bibliothèque de classes CSS pour la gestion des curseurs
+@author Nicolas LE GUERROUE
+@language CSS
+@language_version 3.4
+@version 1.0
+@date 21 aout 2019
+@presentation Cette bibliothèque permet de définir la mise en forme des curseur
+@disconnected
+*/
+.cursor-hand {cursor:hand;}
+.cursor-pointer {cursor:pointer;}
+.cursor-progress {cursor: progress;}
+.cursor-wait {cursor: wait;}
+.cursor-cell {cursor: cell;}
+.cursor-crosshair {cursor: crosshair;}
+.cursor-none {cursor: none;}
+
+.hover-cursor-hand:hover {cursor:hand;}
+.hover-cursor-pointer:hover {cursor:pointer;}
+.hover-cursor-progress:hover {cursor: progress;}
+.hover-cursor-wait:hover {cursor: wait;}
+.hover-cursor-cell:hover {cursor: cell;}
+.hover-cursor-crosshair:hover {cursor: crosshair;}
+.hover-cursor-none:hover {cursor: none;}
+</style>
+
+
+<!-- Fin de l'importation ddu fichier CSS -->
+
+
+
+<!-- Début de l'importation du fichier CSS -->
+
+<style type='text/css'>
+/*
+@project Bibliothèque de classes CSS pour la gestion des alert
+@author Nicolas LE GUERROUE
+@language CSS
+@language_version 3.4
+@version 1.0
+@date 21 aout 2019
+@presentation Cette bibliothèque permet de définir la mise en forme des alertes
+@disconnected
+*/
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert h4 {
+  margin-top: 0;
+  color: inherit;
+}
+
+.alert .alert-link {
+  font-weight: bold;
+}
+
+.alert > p,
+.alert > ul {
+  margin-bottom: 0;
+}
+
+.alert > p + p {
+  margin-top: 5px;
+}
+
+.alert-dismissable {
+  padding-right: 35px;
+}
+
+.alert-dismissable .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  color: inherit;
+}
+
+.alert-success {
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.alert-success hr {
+  border-top-color: #c9e2b3;
+}
+
+.alert-success .alert-link {
+  color: #356635;
+}
+
+.alert-info {
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.alert-info hr {
+  border-top-color: #a6e1ec;
+}
+
+.alert-info .alert-link {
+  color: #2d6987;
+}
+
+.alert-warning {
+  color: #c09853;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+
+.alert-warning hr {
+  border-top-color: #f7e1b5;
+}
+
+.alert-warning .alert-link {
+  color: #a47e3c;
+}
+
+.alert-danger {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+.alert-danger hr {
+  border-top-color: #e4b9c0;
+}
+
+.alert-danger .alert-link {
+  color: #953b39;
+}
+</style>
+
+
+<!-- Fin de l'importation ddu fichier CSS -->
+
+
+
+<!-- Début de l'importation du fichier CSS -->
+
+<style type='text/css'>
+/*
+@project Bibliothèque de classes CSS pour la gestion des badges
+@author Nicolas LE GUERROUE
+@language CSS
+@language_version 3.4
+@version 1.0
+@date 21 aout 2019
+@presentation Cette bibliothèque permet de créer des petits badges
+@disconnected
+*/
+
+
+
+/*
+@title Création des badges
+@info Permet de créer un badge
+@target Portée
+@example Visualisez l'exemple
+*/
+/* 
+@class badge
+@info Permet de créer un badge avec bordure
+@target Balises div, span
+@example <div @add>exemple</div>
+*/
+.badge {
+  display: inline-block;
+  min-width: 20px;
+  padding: 3px 7px;
+  font-size: 14px;
+  font-weight: bold;
+  border-width: 1em;
+  line-height: 5px;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 5px;
+  background-color: black;
+
+}
+.badge:empty {
+  display: none;
+}
+
+.badge:hover,
+.badge:focus {
+  cursor: pointer;
+}
+</style>
+
+
+<!-- Fin de l'importation ddu fichier CSS -->
+
+<div class='menu-left' class='bg-metallic-blue'><h2><b><i class='water'>Sommaire</b></i></h2>
+     		<ul><a class=" link-black-animation link-hover-orange link-visited-grey" href="#LTSpice
+"><li class="ul-square" title="	Le constructeur permet de créer une instance de la classe LTSpice
+
+"> LTSpice
+</li></a><li class="ul-square green" title="	Cette méthode permet de retourner la position courante en x du curseur dans le fichier.
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#x
+"> x
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet de retourner la position courante en y du curseur dans le fichier.
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#y
+"> y
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet de retourner l'angle de la position "up"
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#up
+"> up
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet de retourner l'angle de la position "down"
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#down
+"> down
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet de retourner l'angle de la position "right"
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#right
+"> right
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet de retourner l'angle de la position "left"
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#left
+"> left
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet d'ajouter un label dans le schéma. Ce label, placé à un noeud du circuit, permet de revenir sur ce noeud plus tard, pour rajouter une autre branche de circuit.
+
+Lorsque aucune coordonnée n'est donnée, le label se place aux coordonnées courantes.
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#addNode
+"> addNode
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet de récuperer les informations d'un label
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#getNode
+"> getNode
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet d'ajouter une résistance dans le circuit. 
+
+Lorsque aucune coordonnée n'est donnée, la résistance se place aux coordonnées courantes.
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#addResistor
+"> addResistor
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet d'ajouter un condensateur dans le circuit.
+
+Lorsque aucune coordonnée n'est donnée, le condensateur se place aux coordonnées courantes.
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#addCapacitor
+"> addCapacitor
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet d'ajouter une inductance dans le circuit.
+
+Lorsque aucune coordonnée n'est donnée, l'inductance se place aux coordonnées courantes.
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#addInductor
+"> addInductor
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet d'ajouter un amplificateur opérationnel dans le circuit
+
+Lorsque aucune coordonnée n'est donnée, l'AOP se place au coordonnées courante
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#addAop
+"> addAop
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet ajouter un commentaire dans le schéma
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#addText
+"> addText
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet ajouter un ordre de simulation
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#addDirective
+"> addDirective
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet de dessiner une origine en (0,0) 
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#drawOrigine
+"> drawOrigine
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet de placer le curseur à la position d'un label
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#setCursorToNode
+"> setCursorToNode
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet de placer le curseur à la position souhaités
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#setCursor
+"> setCursor
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet de dessiner une connexion electrique (fil) depuis la position courante
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#wire
+"> wire
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet de placer une connexion electrique de la position courante jusqu'à un label
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#wireToNode
+"> wireToNode
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet de relier une masse à un laebl donnée
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#linkGround
+"> linkGround
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet d'ajouter une masse à la position courante'
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#addGround
+"> addGround
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet d'ajouter un signal en provenance d'un fichier WAV
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#addWaveFileInput
+"> addWaveFileInput
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet d'ajouter un alimentation double (symétrique ou non)
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#addDoubleSupply
+"> addDoubleSupply
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet de définir si la création du schéma doit être détaillé pendant la génération
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#displayInfos
+"> displayInfos
+</a></span></li></a><li class="ul-square green" title="	Cette méthode permet de générer le fichier de sortie
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#exportFile
+"> exportFile
+</a></span></li></a><li class="ul-square green" title="	Voici le code d'exemple associé à la bibliothèque
+
+"> <span class="black hover-orange"><a class="link-black-animation link-hover-orange link-visited-black" href="#Codededémonstration
+"> Code de démonstration
+</a></span></li></a></ul></div><article class='article-main'><div bg-white'><br><br><br><h1 class='center water'><i> Documentation LTSpice
+</i></h1><br><div id='header'<span class='left black float'> Le  05 juin 2020
+ par  Nicolas LE GUERROUE
+ (version  1.0
+)</span><br><span class='left black'>Langage :  PYTHON
+ ( 3.7
+) </span><br><br></div><ul><li><span class='left water'><h3><i>Présentation</i></h3></span></li></ul><br><div class='margin-5 black'> La bibliothèque LTSpice permet de générer des fichiers LTSpice en commandes Python.
+<br> L'unité de placement des composants est une valeur entière qui, unitairement, représente le coefficient commun de taille des composants LTSpice
+<br> Ainsi, une résistance par exemple mesure 96*16.
+<br> Lorsque le placement d'un composant est à une distance de 1, cela veut dire que la distance représente 1/6 de celle de la longueur d'une résistance
+<br> Le curseur se déplacant de 16 en 16, cette unité de mesure introduite par la bibliothèque permet de toujour bien placer les composants pour qu'ils soient
+<br> accessibles par le curseur
+<br><br></div> <div id='LTSpice'><ul><li><span class='left water'><h1><i>Classe  LTSpice
+</i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Le constructeur permet de créer une instance de la classe LTSpice
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> Nom du fichier LTSpice à générer (l'extension '.asc' est obligatoire)
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> ltspice = LTSPice(<span style='color:orange;'>"Fichier_LTSPice.asc"</span>)</pre></div></div><div class='black' id='x'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> x
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet de retourner la position courante en x du curseur dans le fichier.
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>Aucun paramètre attendu </div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'> <span class='blue'>[Integer]</span>  La position du curseur en unité standard (unité=16)
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> position_x = ltspice.x()</pre></div></div><br><div class='black' id='y'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> y
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet de retourner la position courante en y du curseur dans le fichier.
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>Aucun paramètre attendu </div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'> <span class='blue'>[Integer]</span>  La position du curseur en unité standard (unité=16)
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> position_y = ltspice.y()</pre></div></div><br><div class='black' id='up'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> up
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet de retourner l'angle de la position "up"
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>Aucun paramètre attendu </div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'> <span class='blue'>[Integer]</span>  L'angle lors du placement "up" des composants
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> angle_<span style='color:blue;'>up</span> = ltspice.<span style='color:blue;'>up</span>()</pre></div></div><br><div class='black' id='down'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> down
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet de retourner l'angle de la position "down"
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>Aucun paramètre attendu </div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'> <span class='blue'>[Integer]</span>  L'angle lors du placement "down" des composants
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> angle_<span style='color:blue;'>down</span> = ltspice.<span style='color:blue;'>down</span>()</pre></div></div><br><div class='black' id='right'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> right
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet de retourner l'angle de la position "right"
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>Aucun paramètre attendu </div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'> <span class='blue'>[Integer]</span>  L'angle lors du placement "right" des composants
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> angle_<span style='color:blue;'>right</span> = ltspice.<span style='color:blue;'>right</span>()</pre></div></div><br><div class='black' id='left'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> left
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet de retourner l'angle de la position "left"
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>Aucun paramètre attendu </div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'> <span class='blue'>[Integer]</span>  L'angle lors du placement "left" des composants
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> angle_<span style='color:blue;'>left</span> = ltspice.<span style='color:blue;'>left</span>()</pre></div></div><br><div class='black' id='addNode'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> addNode
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet d'ajouter un label dans le schéma. Ce label, placé à un noeud du circuit, permet de revenir sur ce noeud plus tard, pour rajouter une autre branche de circuit.
+
+<br>Lorsque aucune coordonnée n'est donnée, le label se place aux coordonnées courantes.
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> Nom du label
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> État de vérification : si True, le label devra être unique dans le circuit [defaut=False]
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position du label en x [coordonnées standard de LTSpice]  (argument optionnel)
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position du label en y [coordonnées standard de LTSpice]  (argument optionnel)
+</div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[Boolean]</span>   False
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> ltspice.<span style='color:blue;'>addNode</span>(<span style='color:orange;'><span style='color:orange;'>"Vin"</span></span>, <span style='color:purple;'>True</span>, 10, 10) #Place un label unique appelé <span style='color:orange;'><span style='color:orange;'>"Vin"</span></span> en (10,10)</pre></div></div><br><div class='black' id='getNode'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> getNode
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet de récuperer les informations d'un label
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> Nom du label
+</div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[List]</span>  Une liste ["name", checks_state, x, y] si le label est trouvé. Le cas échéant, une liste avec un label vide aux coordonnées d'origine (["", False, 0, 0])
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> node = ltspice.<span style='color:blue;'>getNode</span>(<span style='color:orange;'>"Vin"</span>) </pre></div></div><br><div class='black' id='addResistor'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> addResistor
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet d'ajouter une résistance dans le circuit. 
+
+<br>Lorsque aucune coordonnée n'est donnée, la résistance se place aux coordonnées courantes.
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> Nom de la résistance
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Orientation de la résistance [UP, DOWN, RIGHT, LEFT]
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> Valeur de la résistance en ohms [les préfixes 'k', 'meg', etc, ne fonctionnent pas encore, implémentation future]
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position de la résistance en x [coordonnées standard de LTSpice]  (argument optionnel)
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position de la résistance en y [coordonnées standard de LTSpice]  (argument optionnel)
+</div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[Boolean]</span>   False
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> ltspice.<span style='color:blue;'>addResistor</span>(name=<span style='color:orange;'>"R1"</span>, teta=<span style='color:green;'>RIGHT</span>, value=<span style='color:orange;'>"1200"</span>,x=5, y =12 ) #Place une résistance R1 de 1200 Ohms en (5,12)</pre></div></div><br><div class='black' id='addCapacitor'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> addCapacitor
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet d'ajouter un condensateur dans le circuit.
+
+<br>Lorsque aucune coordonnée n'est donnée, le condensateur se place aux coordonnées courantes.
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> Nom de la condensateur
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Orientation du condensateur [UP, DOWN, RIGHT, LEFT]
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> Valeur du condensateur en farad [les préfixes 'k', 'meg', etc, ne fonctionnent pas encore, implémentation future]
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position du condensateur en x [coordonnées standard de LTSpice]  (argument optionnel)
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position du condensateur en y [coordonnées standard de LTSpice]  (argument optionnel)
+</div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[Boolean]</span>   False
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> ltspice.<span style='color:blue;'>addCapacitor</span>(name=<span style='color:orange;'>"C1"</span>, teta=<span style='color:green;'>RIGHT</span>, value=<span style='color:orange;'>"0.001"</span>,x=5, y =12 ) #Place un condensateur C1 de 1 mF en (5,12)</pre></div></div><br><div class='black' id='addInductor'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> addInductor
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet d'ajouter une inductance dans le circuit.
+
+<br>Lorsque aucune coordonnée n'est donnée, l'inductance se place aux coordonnées courantes.
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> Nom de l'inductance
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Orientation de l'inductance [UP, DOWN, RIGHT, LEFT]
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> Valeur de l'inductance en henry [les préfixes 'k', 'meg', etc, ne fonctionnent pas encore, implémentation future]
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position de l'inductance en x [coordonnées standard de LTSpice]  (argument optionnel)
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position de l'inductance en y [coordonnées standard de LTSpice]  (argument optionnel)
+</div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[Boolean]</span>   False
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> ltspice.<span style='color:blue;'>addInductor</span>(name=<span style='color:orange;'>"L1"</span>, teta=<span style='color:green;'>RIGHT</span>, value=<span style='color:orange;'>"1"</span>,x=5, y =12 ) #Place une inductance L1 de 1 Henry en (5,12)</pre></div></div><br><div class='black' id='addAop'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> addAop
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet d'ajouter un amplificateur opérationnel dans le circuit
+
+<br>Lorsque aucune coordonnée n'est donnée, l'AOP se place au coordonnées courante
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> Nom de l'AOP
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Orientation de l'AOP [UP, DOWN]
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Boolean]</span> Etat mode Miroir de l'AOP [0, 1]  -> implémentation du mode_miror=1 non effectué
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> Entrée courante (Entrée nagative ou positive) de l'AOP [suite de la portion de circuit précédente] -> implémentation du link="-" non effectué
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> Label d'alimentation positive. Si ce label existe, il viendra alimenter l'AOP
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> Label d'alimentation négative (ou masse). Si ce label existe, il viendra alimenter l'AOP
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> Label de l'entrée opposée (si link="+", le label viendra se rattacher à l'entrée "-")
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position de l'inductance en x [coordonnées standard de LTSpice]  (argument optionnel)
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position de l'inductance en y [coordonnées standard de LTSpice]  (argument optionnel)
+</div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[Boolean]</span>   False
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> ltspice.<span style='color:blue;'>addAop</span>(name=<span style='color:orange;'>"U1"</span>, teta=<span style='color:green;'>RIGHT</span>, miror=0, link="+",vcc_label="+VCC", vee_label=<span style='color:orange;'>"-VCC"</span>, negative_label=<span style='color:orange;'>"E-"</span>, x=5, y =12 ) </pre></div></div><br><div class='black' id='addText'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> addText
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet ajouter un commentaire dans le schéma
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> Commentaire
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position du texte en x [coordonnées standard de LTSpice]
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position du texte en y [coordonnées standard de LTSpice]
+</div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[Boolean]</span>   False
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> ltspice.<span style='color:blue;'>addText</span>(<span style='color:orange;'>"This file has been generated by Python"</span>, 10, 50)</pre></div></div><br><div class='black' id='addDirective'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> addDirective
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet ajouter un ordre de simulation
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> Ordre de simulation
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position du condensateur en x [coordonnées standard de LTSpice]
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position du condensateur en y [coordonnées standard de LTSpice]
+</div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[Boolean]</span>   False
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> ltspice.<span style='color:blue;'>addDirective</span>(<span style='color:orange;'>".tran 1"</span>, 10, 50)</pre></div></div><br><div class='black' id='drawOrigine'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> drawOrigine
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet de dessiner une origine en (0,0) 
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>Aucun paramètre attendu </div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[Boolean]</span>   False
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> ltspice.drawOrigine()</pre></div></div><br><div class='black' id='setCursorToNode'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> setCursorToNode
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet de placer le curseur à la position d'un label
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[List]</span> Information d'un label données par la méthode <a href='#getNode' class='water link-animation-water link-hover-water'>getNode</a>
+</div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[Boolean]</span>   False
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> ltspice.<span style='color:blue;'>setCursor</span>ToNode(ltspice.<span style='color:blue;'>getNode</span>(<span style='color:orange;'>"Vin"</span>))  <span style='color:green;'>#Place le curseur au label 'Vin'</span></pre></div></div><br><div class='black' id='setCursor'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> setCursor
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet de placer le curseur à la position souhaités
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[List]</span> Information d'un label données par la méthode <a href='#getNode' class='water link-animation-water link-hover-water'>getNode</a>
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position du curseur en x [coordonnées standard de LTSpice]
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position du curseur en y [coordonnées standard de LTSpice]
+</div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[Boolean]</span>   False
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> ltspice.<span style='color:blue;'>setCursor</span>(10,10)  #Place le curseur en (10,10)</pre></div></div><br><div class='black' id='wire'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> wire
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet de dessiner une connexion electrique (fil) depuis la position courante
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Inclinaison du fil [UP, DOWN, RIGHT, LEFT]
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Longueur du fi [coordonnées standard de LTSpice]
+</div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[Boolean]</span>   False
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> ltspice.<span style='color:blue;'>wire</span>(<span style='color:green;'>UP</span>,10)  <span style='color:green;'>#Place un fil allant vers le haut long de 10</span></pre></div></div><br><div class='black' id='wireToNode'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> wireToNode
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet de placer une connexion electrique de la position courante jusqu'à un label
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[List]</span> Information d'un label données par la méthode <a href='#getNode'>getNode()</a>
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Type de chemin pris par le fil [1 ou 2]
+</div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[Boolean]</span>   False
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> ltspice.<span style='color:blue;'>wire</span>ToNode(ltspice.<span style='color:blue;'>getNode</span>(<span style='color:orange;'>"Vin"</span>, 1))  <span style='color:green;'>#Place le fil jusqu'au label 'Vin' en rpenant le chemin n°1</span></pre></div></div><br><div class='black' id='linkGround'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> linkGround
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet de relier une masse à un laebl donnée
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[List]</span> Information d'un label données par la méthode <a href='#getNode' class='water link-animation-water link-hover-water'>getNode</a>
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Orientation du fil de masse [UP, DOWN, RIGHT, LEFT]
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Longueur du fil de masse [coordonnées standard de LTSpice]
+</div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[Boolean]</span>   False
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> ltspice.<span style='color:blue;'>linkGround</span>(ltspice.<span style='color:blue;'>getNode</span>('Vin'), <span style='color:green;'>LEFT</span>, 2)  <span style='color:green;'>#Place une masse à deux unités à gauche du label 'Vin'</span></pre></div></div><br><div class='black' id='addGround'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> addGround
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet d'ajouter une masse à la position courante'
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Orientation de la masse [UP, DOWN, RIGHT, LEFT]
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Longueur du fil de masse [coordonnées standard de LTSpice]
+</div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[Boolean]</span>   False
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> ltspice.<span style='color:blue;'>addGround</span>(<span style='color:green;'>LEFT</span>, 2)  <span style='color:green;'>#Place une masse à deux unités à gauche du label 'Vin'</span></pre></div></div><br><div class='black' id='addWaveFileInput'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> addWaveFileInput
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet d'ajouter un signal en provenance d'un fichier WAV
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> Nom du fichier WAV
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> Nom du label associé (pour récuperer le signal dans le circuit)
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position du curseur en x [coordonnées standard de LTSpice] (facultatif)
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position du curseur en y [coordonnées standard de LTSpice] (facultatif)
+</div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[Boolean]</span>   False
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> ltspice.<span style='color:blue;'>addWaveFileInput</span>(<span style='color:orange;'>"input.wav"</span>, <span style='color:orange;'>"input_wave"</span>, -5, -2) </pre></div></div><br><div class='black' id='addDoubleSupply'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> addDoubleSupply
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet d'ajouter un alimentation double (symétrique ou non)
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Float]</span> Tension d'alimentation positive
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Float]</span> Tension d'alimentation négative
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[String]</span> liste des labels d'alimentation (default=["+VCC","-VCC"])	
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position de l'alimentation en x [coordonnées standard de LTSpice] (facultatif)
+</div></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Integer]</span> Position de l'alimentation en y [coordonnées standard de LTSpice] (facultatif)
+</div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[Boolean]</span>   False
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> ltspice.<span style='color:blue;'>addDoubleS<span style='color:blue;'>up</span>ply</span>(vcc=15.0, vee=15, name=['+VCC', <span style='color:orange;'>"-VCC"</span>], x=20, y=30) </pre></div></div><br><div class='black' id='displayInfos'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> displayInfos
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet de définir si la création du schéma doit être détaillé pendant la génération
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>	<span class='green'>[Boolean]</span> Etat de l'affichage
+</div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[Boolean]</span>   False
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> ltspice.<span style='color:blue;'>displayInfos</span>(<span style='color:purple;'>True</span>)</pre></div></div><br><div class='black' id='exportFile'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> exportFile
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Cette méthode permet de générer le fichier de sortie
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>Aucun paramètre attendu </div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[Boolean]</span>   False en cas de succès, True en cas d'erreur
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> ltspice.<span style='color:blue;'>displayInfos</span>(<span style='color:purple;'>True</span>)</pre></div></div><br><div class='black' id='Codededémonstration'><ul><li class='ul-square green'><span class='left water'><h1><i>  <span class='water hover-orange'> Code de démonstration
+</span> </i></h1></span></li></ul><div class='margin-5'><h4><i class='orange'>Description</i></h4></div><div class='margin-5'><div class='margin-5'>	Voici le code d'exemple associé à la bibliothèque
+
+<br></div></div><div class='margin-5'><h4><i class='orange'>Paramètres</i></h4></div><div class='margin-5'><div class='margin-5'>Aucun paramètre attendu </div></div><div class='margin-5'><h4><i class='orange'>Retour</i></h3></div><div class='margin-5'><div class='margin-5'><span class='blue'>[Boolean]</span>   False
+</div></div><div class='margin-5'><h4><i class='orange'>Exemple</i></h4></div><div class='margin-5' style='box-shadow: 2px 2px 2px black;'><pre style='padding:2em; background-color:rgb(230,230,240);' class='black'> lt = <span style='color:blue;'>LTSpice</span>(<span style='color:orange;'>"Project.asc"</span>)<br>lt.<span style='color:blue;'>displayInfos</span>(<span style='color:purple;'>True</span>)<br>lt.<span style='color:blue;'>setCursor</span>(0, 0)<br>lt.<span style='color:blue;'>addNode</span>(<span style='color:orange;'><span style='color:orange;'>"V_wave"</span></span>, <span style='color:purple;'>True</span>, lt.x(), lt.y())<br>lt.<span style='color:blue;'>wire</span>(<span style='color:green;'>RIGHT</span>, 2)<br>lt.<span style='color:blue;'>addResistor</span>(<span style='color:orange;'>"R1"</span>, <span style='color:green;'>RIGHT</span>,<span style='color:orange;'><span style='color:orange;'><span style='color:orange;'>"1000"</span></span></span>)<br>lt.<span style='color:blue;'>wire</span>(<span style='color:green;'>RIGHT</span>, 2)<br>lt.<span style='color:blue;'>addNode</span>(<span style='color:orange;'>"N1"</span>)<br>lt.<span style='color:blue;'>wire</span>(<span style='color:green;'>RIGHT</span>, 2)<br>lt.<span style='color:blue;'>addCapacitor</span>(<span style='color:orange;'>"C1"</span>, <span style='color:green;'>RIGHT</span>, <span style='color:orange;'><span style='color:orange;'><span style='color:orange;'>"1000"</span></span></span>)<br>lt.<span style='color:blue;'>wire</span>(<span style='color:green;'>RIGHT</span>, 2)<br>lt.<span style='color:blue;'>addNode</span>(<span style='color:orange;'><span style='color:orange;'>"N2"</span></span>)<br>lt.<span style='color:blue;'>wire</span>(<span style='color:green;'>DOWN</span>, 2)<br>lt.<span style='color:blue;'>addResistor</span>(<span style='color:orange;'>"R3"</span>, <span style='color:green;'>DOWN</span>, <span style='color:orange;'><span style='color:orange;'><span style='color:orange;'>"1000"</span></span></span>)<br>lt.<span style='color:blue;'>wire</span>(<span style='color:green;'>DOWN</span>, 2)<br>lt.<span style='color:blue;'>addGround</span>(<span style='color:green;'>DOWN</span>, 2)<br>lt.<span style='color:blue;'>setCursor</span>ToNode(lt.<span style='color:blue;'>getNode</span>(<span style='color:orange;'><span style='color:orange;'>"N2"</span></span>))<br>lt.<span style='color:blue;'>wire</span>(<span style='color:green;'>RIGHT</span>, 2)<br>lt.<span style='color:blue;'>addAop</span>(name=<span style='color:orange;'>"A1"</span>, teta=<span style='color:green;'>DOWN</span>, miror=0, link="+", vcc_label="+VCC", vee_label=<span style='color:orange;'><span style='color:orange;'>"-VCC"</span></span>, negative_label=<span style='color:orange;'><span style='color:orange;'>"E1"</span></span>)<br>lt.<span style='color:blue;'>wire</span>(lt.<span style='color:blue;'>right</span>(), 2)<br>lt.<span style='color:blue;'>addNode</span>(<span style='color:orange;'>"Vs"</span>)<br>lt.<span style='color:blue;'>setCursor</span>ToNode(lt.<span style='color:blue;'>getNode</span>(<span style='color:orange;'><span style='color:orange;'>"E1"</span></span>))<br>lt.<span style='color:blue;'>addGround</span>(<span style='color:green;'>LEFT</span>, 2)<br>lt.<span style='color:blue;'>addText</span>(<span style='color:orange;'>"This file has been automatically generated"</span>, -10,25)<br>lt.<span style='color:blue;'>addDirective</span>(<span style='color:orange;'>".tran 11"</span>, -10, 5)<br>lt.<span style='color:blue;'>addWaveFileInput</span>(filename=<span style='color:orange;'>"son.wav"</span>, name=<span style='color:orange;'><span style='color:orange;'>"V_wave"</span></span>, x=-10, y=15)<br>lt.<span style='color:blue;'>addDoubleS<span style='color:blue;'>up</span>ply</span>(vcc=15.0, vee=15.0, name=["+VCC", <span style='color:orange;'><span style='color:orange;'>"-VCC"</span></span>], x=-10, y=30)<br>lt.<span style='color:blue;'>exportFile</span>()</pre></div></div><br></article></body></html>
