@@ -1,0 +1,42 @@
+{
+	"Insert method setter ": 
+	{
+	 "scope" : "python",
+	 "prefix" : "Python.def.setter",
+	 "body" : 
+	 [
+	 "def ${1:method}(self, ${1:method}) -> ${2:returnType}:\n\t\"\"\"Setter of attribut '${1:method}'\"\"\"\n\n\tassert type(${1:method}) is ${2:returnType}\n\tself.__${1:method} = ${1:method}"
+	 ], 
+	 "description" : "Create setter on method",
+	},
+	"Insert constructor ": 
+	{
+		"scope" : "python",
+		"prefix" : "Python.def.init",
+		"body" : 
+		[
+		"def __init__(self, ${1:args}):\n\t\"\"\"Constructor\"\"\"\n\tself.__${1:arg} = ${1:arg}"
+		], 
+		"description" : "Create init method",
+	},
+	"Insert method getter ": 
+	{
+		"scope" : "python",
+		"prefix" : "Python.def.getter",
+		"body" : 
+		[
+		"def ${1:method}(self) -> ${2:returnType}:\n\t\"\"\"Getter of attribut '${1:method}'\"\"\"\n\treturn self.__${1:method}"
+		], 
+		"description" : "Create setter on method",
+	},
+	"Insert assert ": 
+	{
+		"scope" : "python",
+		"prefix" : "Python.assert",
+		"body" : 
+		[
+		"assert type(${1:arg}) is ${2:type}"
+		], 
+		"description" : "Create setter on method",
+	},
+}
