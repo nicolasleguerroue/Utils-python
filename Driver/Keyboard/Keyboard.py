@@ -202,7 +202,7 @@ class Keyboard():
 
 
 
-if __name__ == '__main__':   #Jeux de tests
+if(__name__ == '__main__'):   #Jeux de tests
 	
 	keyboard = Keyboard()
 	keyboard.addSlot("a", test1, "test avec un argument")

@@ -22,3 +22,10 @@ class Screen():
 	def clear(self):
 
 		cv.destroyAllWindows()
+
+def main():
+	pass
+
+
+if( __name__ == "__main__"):
+	main()

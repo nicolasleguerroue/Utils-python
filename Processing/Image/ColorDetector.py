@@ -2,6 +2,7 @@ from Camera import Camera
 from Screen import Screen
 from ..Debug.Debug import Debug
 from Color.Color import Color
+import cv2 as cv
 
 import numpy as np
 

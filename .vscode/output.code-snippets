@@ -39,4 +39,25 @@
 		], 
 		"description" : "Create setter on method",
 	},
+	"Insert unit test ": 
+	{
+		"scope" : "python",
+		"prefix" : "Python.def.main",
+		"body" : 
+		[
+		"def main():\n\tpass\n\n\nif( __name__ == \"__main__\"):\n\tmain()"
+		], 
+		"description" : "Create main method",
+	},
+
+	"Insert class ": 
+	{
+		"scope" : "python",
+		"prefix" : "Python.class",
+		"body" : 
+		[
+		"class ${1:className}:\n\t\"\"\"Class ${1:className}\"\"\"\n\tpass"
+		], 
+		"description" : "Create class",
+	},
 }

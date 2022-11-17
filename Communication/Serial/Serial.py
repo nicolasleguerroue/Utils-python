@@ -9,7 +9,7 @@ indexCommands = 0
 countCommands = 0
 allCommands = []
 
-class Serial (threading.Thread):
+class Serial(threading.Thread):
 	"""Class for multithreading"""
 
 	def __init__(self, threadID, name, ):
@@ -75,3 +75,9 @@ def readData(serialObject):
 			result = ""
 			
 		
+def main():
+	pass
+
+
+if( __name__ == "__main__"):
+	main()

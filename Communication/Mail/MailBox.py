@@ -266,5 +266,5 @@ def main():
     print(m.totalMails())
     # for f in a.getFolders():
     #     print(f)
-
-
+if( __name__ == "__main__"):
+    main()

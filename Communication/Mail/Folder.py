@@ -32,3 +32,10 @@ class Folder():
     def __str__(self):
 
         return "Folder <'"+str(self.__name)+"'> with "+str(len(self.__child))+" children(s) and "+str(len(self.__mails))+" mail(s)"
+
+def main():
+        pass
+    
+    
+if( __name__ == "__main__"):
+    main()
