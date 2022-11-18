@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>992</width>
+    <height>740</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Application stockage</string>
+  </property>
+  <property name="windowOpacity">
+   <double>0.500000000000000</double>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="2" column="2">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="pb_openPort">
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>138</red>
+            <green>226</green>
+            <blue>52</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>138</red>
+            <green>226</green>
+            <blue>52</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>138</red>
+            <green>226</green>
+            <blue>52</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="text">
+       <string>Lancer la simulation</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="3">
+     <widget class="QProgressBar" name="pb_progressBar">
+      <property name="value">
+       <number>0</number>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="4">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>3</number>
+      </property>
+      <widget class="QWidget" name="tab_1">
+       <attribute name="title">
+        <string>Résidence</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Pourcentage du chauffage</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Energie annuelle</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>%</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="4">
+         <widget class="QLabel" name="label_5">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:22pt; font-weight:700;&quot;&gt;Installation solaire à Kujjijak&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>kWh</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="4">
+         <widget class="QTableWidget" name="tw_consumption">
+          <property name="rowCount">
+           <number>1</number>
+          </property>
+          <attribute name="horizontalHeaderMinimumSectionSize">
+           <number>70</number>
+          </attribute>
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>80</number>
+          </attribute>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="verticalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <row/>
+          <column>
+           <property name="text">
+            <string>Janvier</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Février</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Mars</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Avril</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Mai</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Juin</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Juillet</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Aout</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Septembre</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Octobre</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Novembre</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Décembre</string>
+           </property>
+          </column>
+          <item row="0" column="0">
+           <property name="text">
+            <string>590</string>
+           </property>
+          </item>
+          <item row="0" column="1">
+           <property name="text">
+            <string>542</string>
+           </property>
+          </item>
+          <item row="0" column="2">
+           <property name="text">
+            <string>560</string>
+           </property>
+          </item>
+          <item row="0" column="3">
+           <property name="text">
+            <string>472</string>
+           </property>
+          </item>
+          <item row="0" column="4">
+           <property name="text">
+            <string>436</string>
+           </property>
+          </item>
+          <item row="0" column="5">
+           <property name="text">
+            <string>407</string>
+           </property>
+          </item>
+          <item row="0" column="6">
+           <property name="text">
+            <string>413</string>
+           </property>
+          </item>
+          <item row="0" column="7">
+           <property name="text">
+            <string>420</string>
+           </property>
+          </item>
+          <item row="0" column="8">
+           <property name="text">
+            <string>439</string>
+           </property>
+          </item>
+          <item row="0" column="9">
+           <property name="text">
+            <string>491</string>
+           </property>
+          </item>
+          <item row="0" column="10">
+           <property name="text">
+            <string>520</string>
+           </property>
+          </item>
+          <item row="0" column="11">
+           <property name="text">
+            <string>551</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QSpinBox" name="sb__consumptionYear">
+          <property name="maximum">
+           <number>20000</number>
+          </property>
+          <property name="value">
+           <number>5840</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QSpinBox" name="sb_rateHeat">
+          <property name="value">
+           <number>70</number>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Météo</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="1" column="0">
+         <widget class="QTableWidget" name="tw_sun">
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>Janvier</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Février</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Mars</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Avril</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Mai</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Juin</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Juillet</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Aout</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Septembre</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Octobre</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Novembre</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Décembre</string>
+           </property>
+          </column>
+          <item row="0" column="0">
+           <property name="text">
+            <string>1.2</string>
+           </property>
+          </item>
+          <item row="0" column="1">
+           <property name="text">
+            <string>3.4</string>
+           </property>
+          </item>
+          <item row="0" column="2">
+           <property name="text">
+            <string>5.5</string>
+           </property>
+          </item>
+          <item row="0" column="3">
+           <property name="text">
+            <string>7.5</string>
+           </property>
+          </item>
+          <item row="0" column="4">
+           <property name="text">
+            <string>6.4</string>
+           </property>
+          </item>
+          <item row="0" column="5">
+           <property name="text">
+            <string>6.3</string>
+           </property>
+          </item>
+          <item row="0" column="6">
+           <property name="text">
+            <string>6.9</string>
+           </property>
+          </item>
+          <item row="0" column="7">
+           <property name="text">
+            <string>5.2</string>
+           </property>
+          </item>
+          <item row="0" column="8">
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item row="0" column="9">
+           <property name="text">
+            <string>1.8</string>
+           </property>
+          </item>
+          <item row="0" column="10">
+           <property name="text">
+            <string>1.5</string>
+           </property>
+          </item>
+          <item row="0" column="11">
+           <property name="text">
+            <string>0.7</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;Nombre d'heures de soleil moyen par jour pour un mois donnée&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>Productions</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="5" column="1">
+         <widget class="QDoubleSpinBox" name="dsb_areaPanel"/>
+        </item>
+        <item row="6" column="1">
+         <widget class="QDoubleSpinBox" name="dsb_volume"/>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="lbl_volume">
+          <property name="text">
+           <string>Volume</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>Liste des moyens de production</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="lbl_surface">
+          <property name="text">
+           <string>Surface</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="4">
+         <widget class="QTableWidget" name="tw_addPower">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>1000000</height>
+           </size>
+          </property>
+          <attribute name="horizontalHeaderMinimumSectionSize">
+           <number>120</number>
+          </attribute>
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>250</number>
+          </attribute>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="verticalHeaderMinimumSectionSize">
+           <number>15</number>
+          </attribute>
+          <attribute name="verticalHeaderDefaultSectionSize">
+           <number>30</number>
+          </attribute>
+          <attribute name="verticalHeaderStretchLastSection">
+           <bool>false</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>Moyens de production</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string/>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string/>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="QLabel" name="lbl_unit_area">
+          <property name="text">
+           <string>m^2</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="pb_addPower">
+          <property name="text">
+           <string>Ajouter</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="2">
+         <widget class="QLabel" name="lbl_unit_power">
+          <property name="text">
+           <string>kW</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="2">
+         <widget class="QLabel" name="lbl_unit_volume">
+          <property name="text">
+           <string>m^3</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QLabel" name="lbl_power">
+          <property name="text">
+           <string>Puissance crête</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="0">
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>485</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="0" colspan="4">
+         <widget class="Line" name="line">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0" colspan="2">
+         <widget class="QComboBox" name="cb_power">
+          <item>
+           <property name="text">
+            <string>Panneaux solaires</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="7" column="1">
+         <widget class="QDoubleSpinBox" name="dsb_powerPanel"/>
+        </item>
+        <item row="4" column="1">
+         <widget class="QDoubleSpinBox" name="dsb_area"/>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="lbl_areaPanel">
+          <property name="text">
+           <string>Surface d'un panneau</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="2">
+         <widget class="QLabel" name="lbl_unit_areaPanel">
+          <property name="text">
+           <string>m^2</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <widget class="QPushButton" name="pb_savePower">
+          <property name="text">
+           <string>Enregistrer</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Stockage</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="6" column="0">
+         <widget class="QLabel" name="lbl_selfDischargeRate">
+          <property name="text">
+           <string>Autodécharge</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QLabel" name="lbl_volumeSalt">
+          <property name="text">
+           <string>Volume</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="4">
+         <widget class="QTableWidget" name="tw_addStorage">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>1000000</height>
+           </size>
+          </property>
+          <attribute name="horizontalHeaderMinimumSectionSize">
+           <number>120</number>
+          </attribute>
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>250</number>
+          </attribute>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="verticalHeaderMinimumSectionSize">
+           <number>15</number>
+          </attribute>
+          <attribute name="verticalHeaderDefaultSectionSize">
+           <number>30</number>
+          </attribute>
+          <attribute name="verticalHeaderStretchLastSection">
+           <bool>false</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>Moyens de stockage</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string/>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string/>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>Liste des moyens de stockage</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="lbl_cap">
+          <property name="text">
+           <string>Capacité d'une batterie</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="pb_addStorage">
+          <property name="text">
+           <string>Ajouter</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="1">
+         <widget class="QDoubleSpinBox" name="dsb_energySalt">
+          <property name="value">
+           <double>10.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="2">
+         <widget class="QLabel" name="lbl_unit_volumeSalt">
+          <property name="text">
+           <string>m^3</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="lbl_countBat">
+          <property name="text">
+           <string>Nombre de batteries</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="0">
+         <widget class="QPushButton" name="pb_saveStorage">
+          <property name="text">
+           <string>Enregistrer</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="lbl_voltage">
+          <property name="text">
+           <string>Tension des batteries</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <widget class="QLabel" name="lbl_energySalt">
+          <property name="text">
+           <string>Energie par m^3</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>584</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="8" column="2">
+         <widget class="QLabel" name="lbl_unit_energySalt">
+          <property name="text">
+           <string>kWh</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="1">
+         <widget class="QDoubleSpinBox" name="dsb_energyMCube">
+          <property name="value">
+           <double>99.989999999999995</double>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="2">
+         <widget class="QComboBox" name="cb_storage">
+          <item>
+           <property name="text">
+            <string>Batterie_plomb</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Hydrogène</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Sel</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QDoubleSpinBox" name="dsb_voltage"/>
+        </item>
+        <item row="5" column="1">
+         <widget class="QDoubleSpinBox" name="dsb_capacity"/>
+        </item>
+        <item row="3" column="1">
+         <widget class="QSpinBox" name="sb_countBat"/>
+        </item>
+        <item row="4" column="2">
+         <widget class="QLabel" name="lbl_unit_voltage">
+          <property name="text">
+           <string>V</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="2">
+         <widget class="QLabel" name="lbl_unit_capacity">
+          <property name="text">
+           <string>Ah</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="2">
+         <widget class="QLabel" name="lbl_unit_selfDischarge">
+          <property name="text">
+           <string>%</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QDoubleSpinBox" name="dsb_discharge">
+          <property name="value">
+           <double>20.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Résultats</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_8"/>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>992</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
