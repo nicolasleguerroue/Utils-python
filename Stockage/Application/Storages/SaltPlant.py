@@ -51,6 +51,9 @@ class SaltPlant(Debug):
         
         return self.__volume
     
+    def getPercent(self):
+        return self.__energy/self.__maxEnergy*100
+    
     def reset(self):
         self.__energy = self.__maxEnergy
     def __str__(self):

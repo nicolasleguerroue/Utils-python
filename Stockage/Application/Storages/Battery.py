@@ -1,5 +1,6 @@
 import math
-from Tools.Debug import Debug
+#from Tools.Debug import Debug
+
 class CellStatus():
 
     FULL = 0
@@ -17,25 +18,45 @@ class Cell():
         self.__maxCapacity = maxCapacity                    #Ah
         self.__maxEnergy = voltage*maxCapacity/1000         #kWh
         self.__energy = self.__maxEnergy
-        self.__percent = 100
+        self.__percent = 100.0
         self.__id = Cell.COUNTER
         self.__status = CellStatus.FULL
         Cell.COUNTER +=1
     
-    def status(self):
-        return self.__status
-
-    def energy(self):
-        return self.__energy
-
-    def voltage(self):
-
+    def getVoltage(self):
         return self.__voltage
+    def setVoltage(self, voltage):
+        self.__voltage = voltage
 
+    def getMaxEnergy(self):
+        return self.__maxEnergy
+    
+    def getCapacity(self):
+        return self.__maxCapacity
+    def setCapacity(self, capacity):
+        self.__maxCapacity = capacity      
+    
+    def getStatus(self):
+        return self.__status
+    def setStatus(self, status):
+        self.__status = status
+        
+    def getEnergy(self):
+        return self.__energy
+    def setEnergy(self, energy):
+        self.__energy = energy
+    
+    def getPercent(self):
+        #print(self.__maxEnergy)
+        return round(self.__energy/self.__maxEnergy*100, 1)
+
+    def id(self):
+        return self.__id
+    
     def charge(self, energy):
         """return loss in kWh"""
         self.__energy += energy
-        self.__percent = self.percent()
+        self.__percent = self.getPercent()
         losses = 0 #Kwh
 
         if(self.__percent<0):
@@ -48,39 +69,32 @@ class Cell():
             self.__energy = self.__maxEnergy
         return losses
 
-        
-
     def discharge(self, energy):
 
         self.__energy -= energy
-        self.__percent = self.percent()
+        self.__percent = self.getPercent()
 
         if(self.__percent<0):
             self.__status = CellStatus.DISCHARGED
             self.__energy = 0
-            self.__percent = self.percent()
+            self.__percent = self.getPercent()
         elif(self.__percent<100.0):
             self.__status = CellStatus.USED
         else:
             self.__status = CellStatus.FULL
             self.__energy = self.__maxEnergy
 
-    def percent(self):
-        return round(self.__energy/self.__maxEnergy*100, 1)
-
-    def id(self):
-        return self.__id
-
     def __str__(self):
         return "<Cell_"+str(self.__id)+", "+str(self.__voltage)+"V, "+str(self.__maxCapacity)+"Ah, "+str(self.__percent)+"%>"
 
+class Battery():
 
-class Battery(Debug):
-
-    def __init__(self, cellCount, voltage, capacity, dischargeRate=0.2):
+    def __init__(self, cellCount=10, voltage=12, capacity=290, dischargeRate=0.2):
 
         super().__init__()
 
+        #Common
+        self.__voltage = 0
         self.__cellCount = cellCount
         self.__cells = []
         self.__dischargeRate = dischargeRate
@@ -90,7 +104,47 @@ class Battery(Debug):
         for c in range(0, cellCount):
             cell = Cell(voltage, capacity)
             self.__cells.append(cell)
+            
+        self.__capacity = self.getCapacity()
+        
+    def fullCharge(self):
+        for c in self.__cells:
+            c.charge(c.getMaxEnergy())
+            
+    def __str__(self) -> str:
+        return "<Battery with "+str(self.getCount())+" cells, nominal capacity of "+str(self.getCapacity())+" Ah, voltage of "+str(self.getVoltage())+" V and discharge rate of "+str(self.__dischargeRate)+">"
+    
+    def setDischargeRate(self, rate) -> float:
+        """Setter of attribut 'setDischargeRate'"""
+        self.__dischargeRate = rate
 
+    def getPercent(self):
+        return self.__cells[0].getPercent()
+      
+    def getCount(self):
+        return self.__cellCount
+    
+    def setCount(self, count):
+        
+        self.__cellCount = count
+        for c in self.__cells:
+            c = Cell(self.__voltage, self.__capacity)
+            
+    def getCapacity(self):
+        return self.__cells[0].getCapacity()
+    
+    def setCapacity(self, capacity):
+        
+        for c in self.__cells:
+            c.setCapacity(capacity)
+    
+    def getVoltage(self):
+        return self.__cells[0].getVoltage()
+    
+    def setVoltage(self, v):
+        for c in self.__cells:
+            c.setVoltage(v)
+            
     def resetLoses(self):
         self.__loses = 0
     def loses(self):
@@ -98,7 +152,7 @@ class Battery(Debug):
     
     def status(self):
 
-        return "<Battery status : "+str(CellStatus.STATUS[self.__cells[0].status()])+", "+str(self.__cells[0].percent())+"%>"
+        return "<Battery status : "+str(CellStatus.STATUS[self.__cells[0].getStatus()])+", "+str(self.__cells[0].getPercent())+"%>"
 
     def discharge(self, discharge):
         """Discharge in kWh"""
@@ -113,10 +167,7 @@ class Battery(Debug):
         """Remove self_discharge value of energy"""
         self.discharge(self.energy()*self.__dischargeRate)
 
-    def percent(self):
-        return self.__cells[0].percent()
-    def cells(self):
-        return self.__cellCount
+
     def charge(self, charge):
         """Charge in kWh"""
 
@@ -131,19 +182,22 @@ class Battery(Debug):
         
 
     def battery(self):
-        return self.__cells[0].percent()
+        return self.__cells[0].getPercent()
 
     def energy(self):
-        return self.__cells[0].energy()*self.__cellCount
+        return self.__cells[0].getEnergy()*self.__cellCount
 
 def main():
 
     battery = Battery(10,12,290)
+    print(battery)
+    battery.setCount(20)
+    print(battery)
+    battery.discharge(10)
     print(battery.status())
-    battery.discharge(3.4)
+    battery.selfDischarge()
     print(battery.status())
-    battery.charge(3.4)
-    print(battery.status())
+    
     
 
 if(__name__ == "__main__"):

@@ -38,6 +38,7 @@ class Graph():
     def setLegend(self, label):
 
         self.__label = label
+        self.__title = label
         
     def getData(self):
         return [self.__x, self.__y, self.__title, self.__color, self.__line, self.__label, self.__filled]
