@@ -198,7 +198,6 @@ def main():
     battery.selfDischarge()
     print(battery.status())
     
-    
 
 if(__name__ == "__main__"):
     main()

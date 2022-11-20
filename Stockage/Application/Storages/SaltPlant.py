@@ -1,6 +1,4 @@
 import math
-
-
 from Tools.Debug import Debug
 
 class SaltPlantStatus():
@@ -19,12 +17,12 @@ class SaltPlant(Debug):
         super().__init__()
 
         self.__volume = volume
+        self.__energyPerMCube = energyPerMCube
         self.__energy = volume*energyPerMCube
         self.__maxEnergy = self.__energy
-        self.__status = SaltPlantStatus.FULL
         self.println("Energy stored by salt : "+str(self.__energy)+" kW")
 
-    def energy(self):
+    def getEnergy(self):
 
         return self.__energy
     
@@ -47,10 +45,22 @@ class SaltPlant(Debug):
             
         return returnEnergy
     
-    def volume(self):
+    def getVolume(self):
         
         return self.__volume
     
+    def setVolume(self, volume):
+        self.__volume = volume
+        self.update()
+    
+    def setEnergyMCube(self, energy):
+        self.__energyPerMCube = energy
+        self.update()
+        
+    def update(self):
+        self.__energy = self.__energyPerMCube*self.__volume
+        self.__maxEnergy = self.__energy
+        
     def getPercent(self):
         return self.__energy/self.__maxEnergy*100
     

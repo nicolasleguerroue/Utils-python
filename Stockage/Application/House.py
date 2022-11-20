@@ -135,42 +135,87 @@ class House(Debug):
         allGraphProduction = []
         allGraphSalt = []
         allGraphSun = []
+        allGraphHydrogen = []
         
         for s in range(0, 12):
+            
             sun = self.__sunCalendar.startAtIndex(s)
             consumption = self.__consumptionCalendar.startAtIndex(s)
             
+            graphBatt = Graph()
+            
             if(self.__battery):
                 self.__battery.resetLoses()
+                graphBatt.setLine(Line.LINE)
+                graphBatt.setLegend("Niveau de batterie (%)"+" - "+str(self.__battery.getCount())+" batteries")
+                graphBatt.color(GraphColor.BLUE)
+                
             if(self.__saltPlant):
                 self.__saltPlant.reset()
+                
+            if(self.__hydrogenPlant):
+                self.__hydrogenPlant.reset()
 
-            g1 = Graph()
-            g2 = Graph()
-            g5 = Graph()
-            g6 = Graph()
-            g8 = Graph()
+
+            
+            graphConsumption = Graph()
+            graphConsumption.setLine(Line.LINE)
+            graphConsumption.setLegend("Consommation souhaitée par mois (kWh)")
+            graphConsumption.color(GraphColor.PURPLE)
+            
+            graphSun = Graph()
+            graphSun.setLegend("Heure de soleil par jour (*25 h)")
+            graphSun.setLine(Line.LINE)
+            graphSun.color(GraphColor.GREEN)
+            
+            graphProduction = Graph()
+            graphProduction.setLine(Line.LINE)
+            graphProduction.setFill(False)
+            graphProduction.setLegend("Production photovoltaïque par mois (kWh)")
+            graphProduction.color(GraphColor.RED)       
+             
+            graphSalt = Graph()
+            graphSalt.setLine(Line.LINE)
+            graphSalt.setLegend("Niveau de sel disponible (%)")
+            graphSalt.color(GraphColor.RED)      
+            
+            graphHydrogen = Graph()
+            graphHydrogen.setLine(Line.LINE)
+            graphHydrogen.setLegend("Niveau d'hydrogène (%)")
+            graphHydrogen.color(GraphColor.GREEN)  
+
 
             energyProduced = 0
-            for m in range(0, self.__sunCalendar.size()):
+            energyUsed = 0
+            
+            for m in range(0, self.__sunCalendar.size()): #For each month
 
                 consumption_day = round(consumption[m]/self.__daysInMonth,1)
                 production_day=0
+                
                 if(self.__panels!=None):
                     production_day = self.__panels.produceByDay(sun[m])
+                    
                 for d in range(0, self.__daysInMonth):
 
                     #Store all energy of panels
+                    
                     if(self.__battery):
+                        
                         self.__battery.charge(production_day)
+                        
                         #Consumption of electronic device without heater
                         if(self.__saltPlant):
                             self.__battery.discharge(consumption_day*(1-self.__percentOfHeater))
                         else:
                             self.__battery.discharge(consumption_day)
+                            
+                        
+                    else:
+                        pass
                     #We can use salt to heat house as enought energy
                     if(self.__saltPlant):
-                        if(self.__saltPlant.energy()>consumption_day*(self.__percentOfHeater)):
+                        if(self.__saltPlant.getEnergy()>consumption_day*(self.__percentOfHeater)):
                             #self.println("USING", Debug.SUCCESS)
                             self.__saltPlant.useEnergy(consumption_day*(self.__percentOfHeater))
                         else:
@@ -182,56 +227,45 @@ class House(Debug):
                 #Self discharge 
                 if(self.__battery):
                     self.__battery.selfDischarge()
-                    g1.appendX(m)
-                    g1.appendY(self.__battery.getPercent())
-                    g1.setLine(Line.LINE)
-                    g1.setLegend("Niveau de batterie (%)"+" - "+str(self.__battery.getCount())+" batteries")
-                    g1.color(GraphColor.BLUE)
+                    graphBatt.appendX(m)
+                    graphBatt.appendY(self.__battery.getPercent())
                     #data of consumption
                     
-                g2.appendX(m)
-                g2.appendY(consumption[m])
-                g2.setLine(Line.LINE)
-                g2.setLegend("Consommation souhaitée par mois (kWh)")
-                g2.color(GraphColor.PURPLE)
+                    
+                if(self.__hydrogenPlant):
+                    self.__hydrogenPlant.produceEnergy(-self.__battery.loses())
+                    graphHydrogen.appendX(m)
+                    graphHydrogen.appendY(self.__hydrogenPlant.getPercent())
+                    self.__battery.resetLoses()
+                    
+                graphConsumption.appendX(m)
+                graphConsumption.appendY(consumption[m])
 
-                g5.appendX(m)
+                graphSun.appendX(m)
                 sun2 = [i * 25 for i in sun]
-                g5.appendY(sun2[m])
-                g5.setLegend("Heure de soleil par jour (*25 h)")
-                g5.setLine(Line.LINE)
-                g5.color(GraphColor.BROWN)
+                graphSun.appendY(sun2[m])
 
-                g6.appendX(m)
-                g6.appendY(production_day*30)
-                g6.setLine(Line.LINE)
-                g6.setFill(False)
-                g6.setLegend("Production photovoltaïque par mois (kWh)")
+                graphProduction.appendX(m)
+                graphProduction.appendY(production_day*30)
                 energyProduced +=production_day*30
-                g6.color(GraphColor.RED)
 
                 if(self.__saltPlant):
-                    g8.appendX(m)
-                    g8.appendY(self.__saltPlant.getPercent())
-                    g8.setLine(Line.LINE)
-                    g8.setLegend("Niveau de sel disponible (%)")
-                    g8.color(GraphColor.RED)      
+                    graphSalt.appendX(m)
+                    graphSalt.appendY(self.__saltPlant.getPercent())
+
            
-            allGraphesBattery.append(g1)
-            allGraphConsumption.append(g2)
-            allGraphProduction.append(g6)
-            allGraphSun.append(g5)
-            allGraphSalt.append(g8)
+            allGraphesBattery.append(graphBatt)
+            allGraphConsumption.append(graphConsumption)
+            allGraphProduction.append(graphProduction)
+            allGraphSun.append(graphSun)
+            allGraphSalt.append(graphSalt)
+            allGraphHydrogen.append(graphHydrogen)
            
         allGraph.append(allGraphesBattery)
         allGraph.append(allGraphProduction)
         allGraph.append(allGraphSalt)
         allGraph.append(allGraphSun)
         allGraph.append(allGraphConsumption)
+        allGraph.append(allGraphHydrogen)
         
         return allGraph
-            #fullGraph.appendGraph(graph.getData())
-        # fullGraph.title("Energy in battery vs month (%)")
-        # fullGraph.xLabel("Months")
-        # fullGraph.yLabel("Energy (%)")
-        # fullGraph.display("simulate.png")
